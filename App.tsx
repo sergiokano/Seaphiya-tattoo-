@@ -817,7 +817,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 scale: badgesScale,
               }}
             >
-              {[t('styles.fineLine'), t('styles.microRealism'), t('styles.botanical'), t('styles.minimalist')].map((tag, i) => (
+              {[t('styles.fineLine'), t('styles.microRealism'), t('styles.botanical'), t('styles.minimalist'), t('styles.colorTattoos')].map((tag, i) => (
                 <motion.span
                   key={tag}
                   className="px-3 py-1.5 border border-black/10 rounded-full font-mono text-[8px] md:text-[9px] uppercase tracking-[0.15em] text-black/40"
@@ -825,7 +825,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                     opacity: 0,
                     scale: 0.8,
                     filter: 'blur(4px)',
-                    x: (i - 1.5) * 30
+                    x: (i - 2) * 30
                   }}
                   animate={{
                     opacity: 1,
@@ -899,7 +899,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.6 }}
                 >
-                  {[t('styles.fineLine'), t('styles.microRealism'), t('styles.botanical'), t('styles.minimalist')].map((tag, i) => (
+                  {[t('styles.fineLine'), t('styles.microRealism'), t('styles.botanical'), t('styles.minimalist'), t('styles.colorTattoos')].map((tag, i) => (
                     <motion.span
                       key={tag}
                       className="px-3 py-1.5 border border-black/10 rounded-full font-mono text-[8px] md:text-[9px] uppercase tracking-[0.15em] text-black/40"

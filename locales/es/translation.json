@@ -19,37 +19,69 @@
   },
   "hero": {
     "location": "Ubicación",
-    "nextGuests": "Próximos Clientes",
+    "nextGuests": "Próximos Guests",
     "status": "Estado",
-    "nowBooking": "Aceptando clientes",
+    "nowBooking": "Now booking",
     "follow": "Seguir",
     "established": "Est. 2020",
+    "cities": "Miami — Nueva York",
     "locationFull": "Miami — Nueva York",
-    "specializing": "Especializándome en",
+    "specializing": "Especializada en",
     "scroll": "Desplazarse",
     "byAppointment": "Por Cita",
     "tagline": {
-      "gently": "Suavemente",
-      "forever": "para siempre",
+      "gently": "Gently",
+      "forever": "Forever",
       "left": "Fine Line Art",
-      "center1": "Suavemente,",
-      "center2": "para siempre",
+      "center1": "Gently,",
+      "center2": "Forever",
       "right": "Por Cita"
     }
   },
   "about": {
     "title": "La Artista",
-    "description": "Especializándome en fine line y micro-realism. Creando piezas que respiran, se mueven y envejecen con gracia.",
+    "description": "Especializada en Fine Line y Micro Realismo. Creando piezas que respiran, se mueven y envejecen con gracia.",
     "profession": "Fine Line Artist",
     "location": "Miami, FL — Noble Art Studio",
+    "available": "Disponible",
     "cta": "Reservar Sesión"
   },
   "studios": {
-    "title": "[ Studios & Guest Spots ]",
+    "title": "[ Estudios & Colaboraciones ]",
     "worldwide": "Worldwide",
+    "studiosLabel": "Estudios",
+    "pastGuestSpots": "Estudios de Tattoo & Guests",
+    "upcoming": "Próximos Estudios",
+    "next": "Próximo",
+    "bookGuestSpot": "Reservar en Estudio",
+    "current": "Actual",
+    "locations": {
+      "miami": "Miami",
+      "valencia": "Valencia"
+    },
     "cta": "Book a guest spot",
     "suggest": {
+      "title": "¿Tu ciudad?",
+      "cityLabel": "Ciudad",
+      "cityPlaceholder": "Ej: Madrid",
+      "emailLabel": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "optional": "(opcional)",
+      "or": "o",
+      "link": "sugiere tu ciudad",
+      "submit": "Enviar",
       "thanks": "¡Gracias! Consideraré {city}"
+    }
+  },
+  "work": {
+    "title": "[ Trabajos Seleccionados ]",
+    "years": "2020 — 2025",
+    "viewCaseStudy": "Ver Caso de Estudio",
+    "items": {
+      "fineLineArt": "Fine Line Art",
+      "microRealism": "Micro Realismo",
+      "botanicalFlow": "Flujo Botánico",
+      "delicateDetails": "Detalles Delicados"
     }
   },
   "gallery": {
@@ -60,8 +92,10 @@
   "footer": {
     "copyright": "© Seaphiya 2025",
     "tagline": "Hazlo permanente",
-    "bookNow": "Reservar Ahora",
-    "top": "Arriba"
+    "makeItPermanent": "Hazlo permanente",
+    "bookNow": "Reservar Sesión",
+    "top": "Arriba",
+    "instagram": "Instagram"
   },
   "buttons": {
     "previous": "Anterior",
@@ -103,15 +137,18 @@
   },
   "styles": {
     "fineLine": "Fine Line",
-    "microRealism": "Micro Realism",
-    "botanical": "Botanical",
-    "minimalist": "Minimalist",
+    "fineLineArt": "Fine Line Art",
+    "microRealism": "Micro Realismo",
+    "botanical": "Botánico",
+    "minimalist": "Minimalista",
+    "colorTattoos": "Color Tattoos",
     "ornamental": "Ornamental",
-    "customDesign": "Custom Design",
+    "customDesign": "Diseño Personalizado",
     "fineLineDesc": "Líneas limpias y delicadas",
     "microRealismDesc": "Pequeños detalles realistas",
     "botanicalDesc": "Plantas y flores",
     "minimalistDesc": "Formas simples y limpias",
+    "colorTattoosDesc": "Tatuajes con color y vibrantes",
     "ornamentalDesc": "Patrones decorativos",
     "customDesignDesc": "Algo único especialmente para ti"
   },

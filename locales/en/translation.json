@@ -24,6 +24,7 @@
     "nowBooking": "Now booking",
     "follow": "Follow",
     "established": "Est. 2020",
+    "cities": "Miami — New York",
     "locationFull": "Miami — New York",
     "specializing": "Specializing in",
     "scroll": "Scroll",
@@ -42,14 +43,45 @@
     "description": "Specializing in fine line and micro-realism. Creating pieces that breathe, move, and age with grace.",
     "profession": "Fine Line Artist",
     "location": "Miami, FL — Noble Art Studio",
+    "available": "Available",
     "cta": "Book a Session"
   },
   "studios": {
     "title": "[ Studios & Guest Spots ]",
     "worldwide": "Worldwide",
+    "studiosLabel": "Studios",
+    "pastGuestSpots": "Tattoo Studios & Guests",
+    "upcoming": "Upcoming Studios",
+    "next": "Next",
+    "bookGuestSpot": "Book at a Studio",
+    "current": "Current",
+    "locations": {
+      "miami": "Miami",
+      "valencia": "Valencia"
+    },
     "cta": "Book a guest spot",
     "suggest": {
+      "title": "Your city?",
+      "cityLabel": "City",
+      "cityPlaceholder": "E.g. New York",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "optional": "(optional)",
+      "or": "or",
+      "link": "suggest your city",
+      "submit": "Submit",
       "thanks": "Thanks! I'll consider {city}"
+    }
+  },
+  "work": {
+    "title": "[ Selected Works ]",
+    "years": "2020 — 2025",
+    "viewCaseStudy": "View Case Study",
+    "items": {
+      "fineLineArt": "Fine Line Art",
+      "microRealism": "Micro Realism",
+      "botanicalFlow": "Botanical Flow",
+      "delicateDetails": "Delicate Details"
     }
   },
   "gallery": {
@@ -60,8 +92,10 @@
   "footer": {
     "copyright": "© Seaphiya 2025",
     "tagline": "Make it permanent",
+    "makeItPermanent": "Make it permanent",
     "bookNow": "Book Now",
-    "top": "Top"
+    "top": "Top",
+    "instagram": "Instagram"
   },
   "buttons": {
     "previous": "Previous",
@@ -103,15 +137,18 @@
   },
   "styles": {
     "fineLine": "Fine Line",
+    "fineLineArt": "Fine Line Art",
     "microRealism": "Micro-Realism",
     "botanical": "Botanical",
     "minimalist": "Minimalist",
+    "colorTattoos": "Color Tattoos",
     "ornamental": "Ornamental",
     "customDesign": "Custom Design",
     "fineLineDesc": "Clean and delicate lines",
     "microRealismDesc": "Small realistic details",
     "botanicalDesc": "Plants and flowers",
     "minimalistDesc": "Simple clean shapes",
+    "colorTattoosDesc": "Vibrant and colorful designs",
     "ornamentalDesc": "Decorative patterns",
     "customDesignDesc": "Something unique just for you"
   },
