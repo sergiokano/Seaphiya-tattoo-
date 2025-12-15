@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "brand": "seaphiya",
+    "subtitle": "Tattoo Artist",
+    "location": "Miami, FL",
+    "navigation": {
+      "work": "Work",
+      "about": "About",
+      "bookNow": "Book Now"
+    }
+  },
+  "preloader": {
+    "loading": "Loading",
+    "ready": "Ready",
+    "established": "Est. 2020",
+    "location": "Miami / NYC",
+    "portfolio": "Portfolio '25"
+  },
+  "hero": {
+    "location": "Location",
+    "nextGuests": "Next Guests",
+    "status": "Status",
+    "nowBooking": "Now booking",
+    "follow": "Follow",
+    "established": "Est. 2020",
+    "locationFull": "Miami — New York",
+    "specializing": "Specializing in",
+    "scroll": "Scroll",
+    "byAppointment": "By Appointment"
+  },
+  "about": {
+    "title": "The Artist",
+    "description": "Specializing in fine line and micro-realism. Creating pieces that breathe, move, and age with grace.",
+    "profession": "Fine Line Artist",
+    "location": "Miami, FL — Noble Art Studio",
+    "cta": "Book a Session"
+  },
+  "studios": {
+    "title": "[ Studios & Guest Spots ]",
+    "worldwide": "Worldwide",
+    "cta": "Book a guest spot",
+    "suggest": {
+      "thanks": "Thanks! I'll consider {city}"
+    }
+  },
+  "gallery": {
+    "title": "[ Selected Works ]",
+    "years": "2020 — 2025",
+    "viewCaseStudy": "View Case Study"
+  },
+  "footer": {
+    "copyright": "© Seaphiya 2025",
+    "tagline": "Make it permanent",
+    "bookNow": "Book Now",
+    "top": "Top"
+  },
+  "buttons": {
+    "previous": "Previous",
+    "continue": "Continue",
+    "sending": "Sending...",
+    "submitRequest": "Submit Request"
+  },
+  "booking": {
+    "header": {
+      "title": "Book a Session",
+      "back": "Back"
+    },
+    "hero": {
+      "subtitle": "Begin Your Journey",
+      "title": "Book",
+      "title2": "Your Session"
+    },
+    "location": {
+      "title": "Select Location"
+    },
+    "form": {
+      "describeVision": "Describe your vision *",
+      "references": "References",
+      "style": "Style *",
+      "placement": "Placement *",
+      "size": "Size *",
+      "yourName": "Your Name *",
+      "phone": "Phone",
+      "when": "When?",
+      "budget": "Budget *",
+      "pricingNote": "Final pricing is based on design complexity and discussed during consultation."
+    },
+    "success": {
+      "title": "Request Sent",
+      "subtitle": "Thank you",
+      "message": "I'll review your request and get back to you within 24-48 hours.",
+      "backHome": "Back to Home"
+    }
+  },
+  "common": {
+    "email": "Email",
+    "optional": "(optional)"
+  }
+}

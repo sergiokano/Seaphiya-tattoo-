@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "brand": "seaphiya",
+    "subtitle": "Tatuadora",
+    "location": "Miami, FL",
+    "navigation": {
+      "work": "Trabajo",
+      "about": "Sobre mí",
+      "bookNow": "Reservar"
+    }
+  },
+  "preloader": {
+    "loading": "Cargando",
+    "ready": "Listo",
+    "established": "Est. 2020",
+    "location": "Miami / NYC",
+    "portfolio": "Portafolio '25"
+  },
+  "hero": {
+    "location": "Ubicación",
+    "nextGuests": "Próximos Clientes",
+    "status": "Estado",
+    "nowBooking": "Aceptando clientes",
+    "follow": "Seguir",
+    "established": "Est. 2020",
+    "locationFull": "Miami — Nueva York",
+    "specializing": "Especializándome en",
+    "scroll": "Desplazarse",
+    "byAppointment": "Por Cita"
+  },
+  "about": {
+    "title": "La Artista",
+    "description": "Especializándome en fine line y micro realismo. Creando piezas que respiran, se mueven y envejecen con gracia.",
+    "profession": "Artista de Fine Line",
+    "location": "Miami, FL — Noble Art Studio",
+    "cta": "Reservar Sesión"
+  },
+  "studios": {
+    "title": "[ Estudios & Guestspots ]",
+    "worldwide": "Por Todo el Mundo",
+    "cta": "Reservar guestspot",
+    "suggest": {
+      "thanks": "¡Gracias! Consideraré {city}"
+    }
+  },
+  "gallery": {
+    "title": "[ Trabajos Seleccionados ]",
+    "years": "2020 — 2025",
+    "viewCaseStudy": "Ver Estudio de Caso"
+  },
+  "footer": {
+    "copyright": "© Seaphiya 2025",
+    "tagline": "Hazlo permanente",
+    "bookNow": "Reservar Ahora",
+    "top": "Arriba"
+  },
+  "buttons": {
+    "previous": "Anterior",
+    "continue": "Continuar",
+    "sending": "Enviando...",
+    "submitRequest": "Enviar Solicitud"
+  },
+  "booking": {
+    "header": {
+      "title": "Reservar Sesión",
+      "back": "Atrás"
+    },
+    "hero": {
+      "subtitle": "Comienza Tu Camino",
+      "title": "Reservar",
+      "title2": "Tu Sesión"
+    },
+    "location": {
+      "title": "Selecciona Ubicación"
+    },
+    "form": {
+      "describeVision": "Describe tu visión *",
+      "references": "Referencias",
+      "style": "Estilo *",
+      "placement": "Ubicación *",
+      "size": "Tamaño *",
+      "yourName": "Tu Nombre *",
+      "phone": "Teléfono",
+      "when": "¿Cuándo?",
+      "budget": "Presupuesto *",
+      "pricingNote": "El precio final se basa en la complejidad del diseño."
+    },
+    "success": {
+      "title": "Solicitud Enviada",
+      "subtitle": "Gracias",
+      "message": "Revisaré tu solicitud y me comunicaré contigo en 24-48 horas.",
+      "backHome": "Volver al Inicio"
+    }
+  },
+  "common": {
+    "email": "Correo Electrónico",
+    "optional": "(opcional)"
+  }
+}
