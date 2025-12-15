@@ -46,7 +46,7 @@ const CustomCursor: React.FC = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-8 h-8 bg-paper-white rounded-full pointer-events-none z-[9999] blend-difference flex items-center justify-center mix-blend-difference"
+      className="fixed top-0 left-0 w-8 h-8 bg-skin rounded-full pointer-events-none z-[9999] blend-difference flex items-center justify-center mix-blend-difference"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
