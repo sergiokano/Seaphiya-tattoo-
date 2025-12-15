@@ -1,0 +1,125 @@
+/* Fontshare - Clash Display (must be before tailwindcss import) */
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap");
+
+@import "tailwindcss";
+
+/* Note: Other Google Fonts loaded via next/font in layout.tsx for better performance */
+
+@theme {
+  /* Font families */
+  --font-sans: "Inter", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-editorial: "Playfair Display", serif;
+  --font-display: "Clash Display", sans-serif;
+  --font-script: "Kalam", cursive;
+
+  /* Brand colors */
+  --color-ink-black: #2D2D2D;
+  --color-off-black: #3D3D3D;
+  --color-paper-white: #F5EBE0;
+  --color-pure-white: #FAF6F2;
+  --color-chrome: #8B8680;
+  --color-coral: #C4756E;
+  --color-coral-light: #d4918b;
+  --color-sage: #8A9A7B;
+  --color-sage-light: #a3b396;
+  --color-ink: #2D2D2D;
+  --color-ink-light: #5C5C5C;
+  --color-ink-muted: #8B8680;
+  --color-skin: #E8D5C4;
+  --color-petal: #EBBCBC;
+  --color-sunflower: #E8B86D;
+  --color-cherry: #E8A0A0;
+
+  /* Background images */
+  --bg-noise: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+/* Lenis smooth scroll styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Base body styles */
+body {
+  cursor: none;
+  background-color: var(--color-paper-white);
+  color: var(--color-ink-black);
+  overflow-x: hidden;
+}
+
+/* Disable text selection globally */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow selection in inputs */
+input,
+textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Utility classes */
+.blend-difference {
+  mix-blend-mode: difference;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(45, 45, 45, 0.3);
+  color: transparent;
+}
+
+/* Noise overlay background */
+.bg-noise {
+  background-image: var(--bg-noise);
+}
+
+/* Font utilities */
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}

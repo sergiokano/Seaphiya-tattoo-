@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Seaphiya | Tatuadora Fine Line en Miami",
+      "description": "Tatuadora profesional de fine line y micro realismo en Miami, FL. Especializada en diseños botánicos, arte minimalista y tatuajes personalizados. Reserva tu sesión hoy."
+    },
+    "info": {
+      "title": "Guía de Cuidados del Tatuaje | Seaphiya Tattoo Miami",
+      "description": "Guía completa para antes y después de tu sesión de tatuaje. Consejos profesionales de cuidados de Seaphiya, tatuadora fine line en Miami."
+    },
+    "booking": {
+      "title": "Reserva Tu Sesión de Tatuaje | Seaphiya Miami",
+      "description": "¿Lista para tu nuevo tatuaje? Reserva una sesión con Seaphiya, tatuadora fine line en Miami. Especializada en micro realismo, botánico y diseños minimalistas."
+    }
+  },
+  "navbar": {
+    "brand": "seaphiya",
+    "subtitle": "Tatuadora",
+    "location": "Miami, FL",
+    "navigation": {
+      "work": "Trabajo",
+      "about": "Sobre mí",
+      "info": "Info",
+      "bookNow": "Reservar"
+    }
+  },
+  "preloader": {
+    "loading": "Cargando",
+    "ready": "Listo",
+    "established": "Est. 2020",
+    "location": "Miami / NYC",
+    "portfolio": "Portafolio '25"
+  },
+  "hero": {
+    "location": "Ubicación",
+    "nextGuests": "Próximos Guests",
+    "status": "Estado",
+    "nowBooking": "Now booking",
+    "follow": "Seguir",
+    "established": "Est. 2020",
+    "cities": "Miami — Nueva York",
+    "locationFull": "Miami — Nueva York",
+    "specializing": "Especializada en",
+    "scroll": "Desplazarse",
+    "byAppointment": "Por Cita",
+    "tagline": {
+      "gently": "Gently",
+      "forever": "Forever",
+      "left": "Fine Line Art",
+      "center1": "Gently,",
+      "center2": "Forever",
+      "right": "Por Cita"
+    }
+  },
+  "about": {
+    "title": "La Artista",
+    "description": "Especializada en Fine Line y Micro Realismo. Creando piezas que respiran, se mueven y envejecen con gracia.",
+    "profession": "Fine Line Artist",
+    "location": "Miami, FL — Noble Art Studio",
+    "available": "Disponible",
+    "cta": "Reservar Sesión"
+  },
+  "studios": {
+    "title": "[ Estudios & Colaboraciones ]",
+    "worldwide": "Worldwide",
+    "studiosLabel": "Estudios",
+    "pastGuestSpots": "Estudios de Tattoo & Guests",
+    "upcoming": "Próximos Estudios",
+    "next": "Próximo",
+    "bookGuestSpot": "Reservar en Estudio",
+    "current": "Actual",
+    "locations": {
+      "miami": "Miami",
+      "valencia": "Valencia"
+    },
+    "cta": "Book a guest spot",
+    "suggest": {
+      "title": "¿Tu ciudad?",
+      "cityLabel": "Ciudad",
+      "cityPlaceholder": "Ej: Madrid",
+      "emailLabel": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "optional": "(opcional)",
+      "or": "o",
+      "link": "sugiere tu ciudad",
+      "submit": "Enviar",
+      "thanks": "¡Gracias! Consideraré {city}"
+    }
+  },
+  "work": {
+    "title": "[ Trabajos Seleccionados ]",
+    "years": "2020 — 2025",
+    "viewCaseStudy": "Ver Caso de Estudio",
+    "items": {
+      "fineLineArt": "Fine Line Art",
+      "microRealism": "Micro Realismo",
+      "botanicalFlow": "Flujo Botánico",
+      "delicateDetails": "Detalles Delicados"
+    }
+  },
+  "gallery": {
+    "title": "[ Selected Works ]",
+    "years": "2020 — 2025",
+    "viewCaseStudy": "View Case Study"
+  },
+  "footer": {
+    "copyright": "© Seaphiya 2025",
+    "tagline": "Hazlo permanente",
+    "makeItPermanent": "Hazlo permanente",
+    "bookNow": "Reservar Sesión",
+    "top": "Arriba",
+    "instagram": "Instagram"
+  },
+  "buttons": {
+    "previous": "Anterior",
+    "continue": "Continuar",
+    "sending": "Enviando...",
+    "submitRequest": "Enviar Solicitud"
+  },
+  "booking": {
+    "header": {
+      "title": "Reservar Sesión",
+      "back": "Atrás"
+    },
+    "hero": {
+      "subtitle": "Comienza Tu Camino",
+      "title": "Reservar",
+      "title2": "Tu Sesión"
+    },
+    "location": {
+      "title": "Selecciona Ubicación"
+    },
+    "form": {
+      "describeVision": "Describe tu visión *",
+      "references": "Referencias",
+      "style": "Estilo *",
+      "placement": "Ubicación *",
+      "size": "Tamaño *",
+      "yourName": "Tu Nombre *",
+      "phone": "Teléfono",
+      "when": "¿Cuándo?",
+      "budget": "Presupuesto *",
+      "pricingNote": "El precio final se basa en la complejidad del diseño."
+    },
+    "success": {
+      "title": "Solicitud Enviada",
+      "subtitle": "Gracias",
+      "message": "Revisaré tu solicitud y me comunicaré contigo en 24-48 horas.",
+      "backHome": "Volver al Inicio"
+    }
+  },
+  "styles": {
+    "fineLine": "Fine Line",
+    "fineLineArt": "Fine Line Art",
+    "microRealism": "Micro Realismo",
+    "botanical": "Botánico",
+    "minimalist": "Minimalista",
+    "colorTattoos": "Color Tattoos",
+    "ornamental": "Ornamental",
+    "customDesign": "Diseño Personalizado",
+    "fineLineDesc": "Líneas limpias y delicadas",
+    "microRealismDesc": "Pequeños detalles realistas",
+    "botanicalDesc": "Plantas y flores",
+    "minimalistDesc": "Formas simples y limpias",
+    "colorTattoosDesc": "Tatuajes con color y vibrantes",
+    "ornamentalDesc": "Patrones decorativos",
+    "customDesignDesc": "Algo único especialmente para ti"
+  },
+  "sizes": {
+    "tiny": "Diminuto",
+    "small": "Pequeño",
+    "medium": "Mediano",
+    "large": "Grande",
+    "tinyDesc": "Menos de 1 pulgada",
+    "smallDesc": "1-3 pulgadas",
+    "mediumDesc": "3-6 pulgadas",
+    "largeDesc": "Más de 6 pulgadas"
+  },
+  "budgets": {
+    "range1": "$200 - $400",
+    "range2": "$400 - $600",
+    "range3": "$600 - $1,000",
+    "range4": "$1,000+"
+  },
+  "common": {
+    "email": "Correo Electrónico",
+    "optional": "(opcional)"
+  },
+  "steps": {
+    "step1": {
+      "title": "Tu Visión",
+      "subtitle": "Cuéntame sobre tu tatuaje de ensueño"
+    },
+    "step2": {
+      "title": "Los Detalles",
+      "subtitle": "Tamaño, ubicación y estilo"
+    },
+    "step3": {
+      "title": "Sobre Ti",
+      "subtitle": "Conectemos"
+    },
+    "step4": {
+      "title": "Último Toque",
+      "subtitle": "Cronograma y presupuesto"
+    }
+  }
+}

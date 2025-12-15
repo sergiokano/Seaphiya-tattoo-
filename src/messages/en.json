@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Seaphiya | Fine Line Tattoo Artist in Miami",
+      "description": "Professional fine line and micro-realism tattoo artist in Miami, FL. Specializing in delicate botanical designs, minimalist art, and custom tattoos. Book your session today."
+    },
+    "info": {
+      "title": "Tattoo Aftercare Guide | Seaphiya Tattoo Miami",
+      "description": "Complete guide for before and after your tattoo session. Professional aftercare tips from Seaphiya, fine line tattoo artist in Miami."
+    },
+    "booking": {
+      "title": "Book Your Tattoo Session | Seaphiya Miami",
+      "description": "Ready for your new tattoo? Book a session with Seaphiya, fine line tattoo artist in Miami. Specializing in micro-realism, botanical, and minimalist designs."
+    }
+  },
+  "navbar": {
+    "brand": "seaphiya",
+    "subtitle": "Tattoo Artist",
+    "location": "Miami, FL",
+    "navigation": {
+      "work": "Work",
+      "about": "About",
+      "info": "Info",
+      "bookNow": "Book Now"
+    }
+  },
+  "preloader": {
+    "loading": "Loading",
+    "ready": "Ready",
+    "established": "Est. 2020",
+    "location": "Miami / NYC",
+    "portfolio": "Portfolio '25"
+  },
+  "hero": {
+    "location": "Location",
+    "nextGuests": "Next Guests",
+    "status": "Status",
+    "nowBooking": "Now booking",
+    "follow": "Follow",
+    "established": "Est. 2020",
+    "cities": "Miami — New York",
+    "locationFull": "Miami — New York",
+    "specializing": "Specializing in",
+    "scroll": "Scroll",
+    "byAppointment": "By Appointment",
+    "tagline": {
+      "gently": "Gently",
+      "forever": "forever",
+      "left": "Fine Line Art",
+      "center1": "Gently,",
+      "center2": "forever",
+      "right": "By Appointment"
+    }
+  },
+  "about": {
+    "title": "The Artist",
+    "description": "Specializing in fine line and micro-realism. Creating pieces that breathe, move, and age with grace.",
+    "profession": "Fine Line Artist",
+    "location": "Miami, FL — Noble Art Studio",
+    "available": "Available",
+    "cta": "Book a Session"
+  },
+  "studios": {
+    "title": "[ Studios & Guest Spots ]",
+    "worldwide": "Worldwide",
+    "studiosLabel": "Studios",
+    "pastGuestSpots": "Tattoo Studios & Guests",
+    "upcoming": "Upcoming Studios",
+    "next": "Next",
+    "bookGuestSpot": "Book at a Studio",
+    "current": "Current",
+    "locations": {
+      "miami": "Miami",
+      "valencia": "Valencia"
+    },
+    "cta": "Book a guest spot",
+    "suggest": {
+      "title": "Your city?",
+      "cityLabel": "City",
+      "cityPlaceholder": "E.g. New York",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "optional": "(optional)",
+      "or": "or",
+      "link": "suggest your city",
+      "submit": "Submit",
+      "thanks": "Thanks! I'll consider {city}"
+    }
+  },
+  "work": {
+    "title": "[ Selected Works ]",
+    "years": "2020 — 2025",
+    "viewCaseStudy": "View Case Study",
+    "items": {
+      "fineLineArt": "Fine Line Art",
+      "microRealism": "Micro Realism",
+      "botanicalFlow": "Botanical Flow",
+      "delicateDetails": "Delicate Details"
+    }
+  },
+  "gallery": {
+    "title": "[ Selected Works ]",
+    "years": "2020 — 2025",
+    "viewCaseStudy": "View Case Study"
+  },
+  "footer": {
+    "copyright": "© Seaphiya 2025",
+    "tagline": "Make it permanent",
+    "makeItPermanent": "Make it permanent",
+    "bookNow": "Book Now",
+    "top": "Top",
+    "instagram": "Instagram"
+  },
+  "buttons": {
+    "previous": "Previous",
+    "continue": "Continue",
+    "sending": "Sending...",
+    "submitRequest": "Submit Request"
+  },
+  "booking": {
+    "header": {
+      "title": "Book a Session",
+      "back": "Back"
+    },
+    "hero": {
+      "subtitle": "Begin Your Journey",
+      "title": "Book",
+      "title2": "Your Session"
+    },
+    "location": {
+      "title": "Select Location"
+    },
+    "form": {
+      "describeVision": "Describe your vision *",
+      "references": "References",
+      "style": "Style *",
+      "placement": "Placement *",
+      "size": "Size *",
+      "yourName": "Your Name *",
+      "phone": "Phone",
+      "when": "When?",
+      "budget": "Budget *",
+      "pricingNote": "Final pricing is based on design complexity and discussed during consultation."
+    },
+    "success": {
+      "title": "Request Sent",
+      "subtitle": "Thank you",
+      "message": "I'll review your request and get back to you within 24-48 hours.",
+      "backHome": "Back to Home"
+    }
+  },
+  "styles": {
+    "fineLine": "Fine Line",
+    "fineLineArt": "Fine Line Art",
+    "microRealism": "Micro-Realism",
+    "botanical": "Botanical",
+    "minimalist": "Minimalist",
+    "colorTattoos": "Color Tattoos",
+    "ornamental": "Ornamental",
+    "customDesign": "Custom Design",
+    "fineLineDesc": "Clean and delicate lines",
+    "microRealismDesc": "Small realistic details",
+    "botanicalDesc": "Plants and flowers",
+    "minimalistDesc": "Simple clean shapes",
+    "colorTattoosDesc": "Vibrant and colorful designs",
+    "ornamentalDesc": "Decorative patterns",
+    "customDesignDesc": "Something unique just for you"
+  },
+  "sizes": {
+    "tiny": "Tiny",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "tinyDesc": "Less than 1 inch",
+    "smallDesc": "1-3 inches",
+    "mediumDesc": "3-6 inches",
+    "largeDesc": "Over 6 inches"
+  },
+  "budgets": {
+    "range1": "$200 - $400",
+    "range2": "$400 - $600",
+    "range3": "$600 - $1,000",
+    "range4": "$1,000+"
+  },
+  "common": {
+    "email": "Email",
+    "optional": "(optional)"
+  },
+  "steps": {
+    "step1": {
+      "title": "Your Vision",
+      "subtitle": "Tell me about your dream tattoo"
+    },
+    "step2": {
+      "title": "The Details",
+      "subtitle": "Size, placement & style"
+    },
+    "step3": {
+      "title": "About You",
+      "subtitle": "Let's connect"
+    },
+    "step4": {
+      "title": "Final Touch",
+      "subtitle": "Schedule & budget"
+    }
+  }
+}
