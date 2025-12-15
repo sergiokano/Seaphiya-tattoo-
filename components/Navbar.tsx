@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import MagneticButton from './MagneticButton';
+import LanguageSwitcher from './LanguageSwitcher';
 import { useNavigation } from '../App';
 import { ArrowLeft } from 'lucide-react';
 
@@ -100,6 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ showBackButton = false, onBack }) => {
               </button>
           </div>
         )}
+        <LanguageSwitcher />
         <MagneticButton
           onClick={openBooking}
           className="border border-black/20 px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-ink-black hover:text-paper-white transition-all duration-500 bg-black/5 backdrop-blur-md"

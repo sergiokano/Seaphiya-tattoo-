@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Calendar, Clock, MapPin, Send, Check, Instagram, Plus, X, Link2, Image } from 'lucide-react';
 import Lenis from 'lenis';
+import { useTranslation } from 'react-i18next';
 
 interface ReferenceLink {
   id: string;
@@ -291,6 +292,7 @@ const PeonyBackground: React.FC = () => {
 };
 
 const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -367,10 +369,10 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   ];
 
   const steps = [
-    { title: 'Your Vision', subtitle: 'Tell me about your dream tattoo' },
-    { title: 'The Details', subtitle: 'Size, placement & style' },
-    { title: 'About You', subtitle: 'Let\'s connect' },
-    { title: 'Final Touch', subtitle: 'Schedule & budget' }
+    { title: t('booking.steps.step1.title'), subtitle: t('booking.steps.step1.subtitle') },
+    { title: t('booking.steps.step2.title'), subtitle: t('booking.steps.step2.subtitle') },
+    { title: t('booking.steps.step3.title'), subtitle: t('booking.steps.step3.subtitle') },
+    { title: t('booking.steps.step4.title'), subtitle: t('booking.steps.step4.subtitle') }
   ];
 
   const handleInputChange = (field: keyof FormData, value: string | ReferenceLink[]) => {
@@ -463,12 +465,12 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             {/* Description */}
             <div>
               <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
-                Describe your vision *
+                {t('booking.form.describeVision')}
               </label>
               <textarea
                 value={formData.description}
                 onChange={(e) => handleInputChange('description', e.target.value)}
-                placeholder="Tell me about your dream tattoo... What does it mean to you?"
+                placeholder={t('booking.form.visionPlaceholder')}
                 className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 resize-none transition-colors duration-300 min-h-[80px]"
               />
             </div>
@@ -477,7 +479,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             <div>
               <div className="flex items-center justify-between mb-2">
                 <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/50">
-                  References <span className="text-black/30">(optional)</span>
+                  {t('booking.form.references')} <span className="text-black/30">({t('common.optional')})</span>
                 </label>
                 <span className="font-mono text-[8px] text-black/30">
                   {formData.referenceLinks.length}/5
@@ -516,7 +518,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       value={newLinkUrl}
                       onChange={(e) => setNewLinkUrl(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && addReferenceLink()}
-                      placeholder="Paste image URL..."
+                      placeholder={t('booking.form.pasteUrl')}
                       className="w-full bg-black/5 border border-black/10 focus:border-black/30 rounded-lg px-3 py-2 text-sm text-ink-black placeholder:text-black/25 outline-none transition-all"
                     />
                   </div>
@@ -546,7 +548,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           >
             <div>
               <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
-                Style *
+                {t('booking.form.style')}
               </label>
               <div className="grid grid-cols-3 md:grid-cols-6 gap-1">
                 {tattooStyles.map((style) => (
@@ -560,7 +562,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                     }`}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span className="block text-[10px] font-medium text-ink-black">{style.label}</span>
+                    <span className="block text-[10px] font-medium text-ink-black">{t(`styles.${style.id}`)}</span>
                   </motion.button>
                 ))}
               </div>
@@ -569,20 +571,20 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
-                  Placement *
+                  {t('booking.form.placement')}
                 </label>
                 <input
                   type="text"
                   value={formData.placement}
                   onChange={(e) => handleInputChange('placement', e.target.value)}
-                  placeholder="Inner forearm, behind ear..."
+                  placeholder={t('booking.form.placementPlaceholder')}
                   className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                 />
               </div>
 
               <div>
                 <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
-                  Size *
+                  {t('booking.form.size')}
                 </label>
                 <div className="flex flex-wrap gap-1">
                   {sizes.map((size) => (
@@ -596,7 +598,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       }`}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <span className="text-[9px] font-medium">{size.label}</span>
+                      <span className="text-[9px] font-medium">{t(`sizes.${size.id}`)}</span>
                     </motion.button>
                   ))}
                 </div>
@@ -618,13 +620,13 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             {/* Name */}
             <div>
               <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
-                Your Name *
+                {t('booking.form.yourName')}
               </label>
               <input
                 type="text"
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                placeholder="Full name"
+                placeholder={t('booking.form.fullNamePlaceholder')}
                 className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
               />
             </div>
@@ -633,26 +635,26 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
-                  Email *
+                  {t('common.email')}
                 </label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  placeholder="your@email.com"
+                  placeholder={t('booking.form.emailPlaceholder')}
                   className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                 />
               </div>
 
               <div>
                 <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/30 mb-2">
-                  Phone <span className="text-black/20">(optional)</span>
+                  {t('booking.form.phone')} <span className="text-black/20">({t('common.optional')})</span>
                 </label>
                 <input
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  placeholder="+1 (555) 000-0000"
+                  placeholder={t('booking.form.phonePlaceholder')}
                   className="w-full bg-transparent border-b border-black/10 focus:border-black/40 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/15 transition-colors duration-300"
                 />
               </div>
@@ -677,14 +679,14 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 <div className="flex items-center gap-3 mb-2">
                   <Calendar className="w-4 h-4 text-black/30" />
                   <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/50">
-                    When?
+                    {t('booking.form.when')}
                   </label>
                 </div>
                 <input
                   type="text"
                   value={formData.preferredDate}
                   onChange={(e) => handleInputChange('preferredDate', e.target.value)}
-                  placeholder="Jan 2025, Flexible, ASAP..."
+                  placeholder={t('booking.form.whenPlaceholder')}
                   className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                 />
               </div>
@@ -694,7 +696,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 <div className="flex items-center gap-3 mb-2">
                   <span className="text-black/30 text-sm">$</span>
                   <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/50">
-                    Budget *
+                    {t('booking.form.budget')}
                   </label>
                 </div>
                 <div className="flex flex-wrap gap-1">
@@ -709,7 +711,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       }`}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <span className="text-[9px] font-medium">{budget.label}</span>
+                      <span className="text-[9px] font-medium">{t(`budgets.${budget.id}`)}</span>
                     </motion.button>
                   ))}
                 </div>
@@ -719,8 +721,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             {/* Final summary / confirmation message */}
             <div className="pt-2 border-t border-black/[0.06]">
               <p className="font-mono text-[9px] text-black/30 leading-relaxed">
-                Final pricing is based on design complexity and discussed during consultation.
-                A deposit is required to secure your appointment.
+                {t('booking.form.pricingNote')}
               </p>
             </div>
           </motion.div>
@@ -757,10 +758,10 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-semibold tracking-tight mb-2">
-              Request Sent
+              {t('booking.success.title')}
             </h1>
             <p className="font-editorial italic text-2xl md:text-3xl text-black/50 font-light">
-              Thank you
+              {t('booking.success.subtitle')}
             </p>
           </motion.div>
 
@@ -770,7 +771,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-base md:text-lg text-black/50 text-center max-w-md mt-8 mb-12 font-light leading-relaxed"
           >
-            I'll review your request and get back to you within 24-48 hours.
+            {t('booking.success.message')}
           </motion.p>
 
           <motion.button
@@ -783,7 +784,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             whileTap={{ scale: 0.98 }}
           >
             <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Back to Home</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em]">{t('booking.success.backHome')}</span>
           </motion.button>
         </motion.div>
       </div>
@@ -804,12 +805,12 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           whileTap={{ scale: 0.98 }}
         >
           <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
-          <span className="font-mono text-[9px] uppercase tracking-[0.2em]">Back</span>
+          <span className="font-mono text-[9px] uppercase tracking-[0.2em]">{t('booking.header.back')}</span>
         </motion.button>
 
         <div className="flex flex-col items-center">
           <span className="font-display text-xl font-semibold tracking-tight">seaphiya</span>
-          <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/40">Book a Session</span>
+          <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/40">{t('booking.header.title')}</span>
         </div>
 
         <div className="w-24" />
@@ -833,7 +834,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 className="flex items-center gap-4"
               >
                 <div className="w-12 h-[1px] bg-black/30"></div>
-                <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">Begin Your Journey</span>
+                <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">{t('booking.hero.subtitle')}</span>
               </motion.div>
             </div>
 
@@ -844,7 +845,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[11vw] md:text-[9vw] lg:text-[7vw] font-display font-semibold tracking-tight leading-[0.9]"
               >
-                Book
+                {t('booking.hero.title')}
               </motion.h1>
             </div>
             <div className="overflow-hidden">
@@ -854,7 +855,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[11vw] md:text-[9vw] lg:text-[7vw] font-editorial italic font-light tracking-tight leading-[0.9] text-black/50"
               >
-                Your Session
+                {t('booking.hero.title2')}
               </motion.h1>
             </div>
           </motion.div>
@@ -867,7 +868,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">Select Location</span>
+              <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">{t('booking.location.title')}</span>
               <div className="flex-1 h-[1px] bg-black/10" />
             </div>
 
@@ -922,7 +923,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                             ? 'text-black/50 border-black/10'
                             : 'text-black/30 border-black/[0.06]'
                       }`}>
-                        {loc.status === 'home' ? 'Home' : loc.status === 'confirmed' ? 'Guest' : 'Soon'}
+                        {loc.status === 'home' ? t('booking.location.status.home') : loc.status === 'confirmed' ? t('booking.location.status.guest') : t('booking.location.status.soon')}
                       </span>
                     </div>
                   </div>
@@ -953,13 +954,13 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   <span className={`text-xl md:text-2xl font-light tracking-tight transition-all duration-300 ${
                     formData.location === 'suggest' ? 'text-coral' : 'text-black/40 group-hover:text-coral/80'
                   }`}>
-                    Suggest a city
+                    {t('booking.location.suggestCity')}
                   </span>
                   <span className="hidden md:block text-sm text-black/20 flex-1 px-6 italic">
-                    Join waitlist for a new city
+                    {t('booking.location.joinWaitlist')}
                   </span>
                   <span className="ml-auto md:ml-0 font-mono text-[9px] uppercase tracking-wider px-2 py-1 rounded-full border border-dashed border-coral/30 text-coral/60">
-                    Waitlist
+                    {t('booking.location.waitlist')}
                   </span>
                 </div>
               </motion.button>
@@ -977,17 +978,17 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 >
                   <div className="pt-6 pl-12">
                     <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-coral/60 mb-3">
-                      Which city would you like me to visit?
+                      {t('booking.location.whichCity')}
                     </label>
                     <input
                       type="text"
                       value={formData.suggestedCity}
                       onChange={(e) => handleInputChange('suggestedCity', e.target.value)}
-                      placeholder="e.g., Tokyo, London, NYC..."
+                      placeholder={t('booking.location.cityPlaceholder')}
                       className="w-full max-w-md bg-transparent border-b-2 border-coral/30 focus:border-coral/60 outline-none py-3 text-lg font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                     />
                     <p className="mt-3 font-mono text-[10px] text-black/30">
-                      You'll be added to the waitlist and notified when I plan a visit
+                      {t('booking.location.waitlistInfo')}
                     </p>
                   </div>
                 </motion.div>
@@ -1007,10 +1008,10 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 >
                   <p className="pt-4 font-mono text-[11px] text-black/40 pl-12">
                     {locations.find(l => l.id === formData.location)?.status === 'waitlist'
-                      ? 'Dates pending — you\'ll be notified when confirmed'
+                      ? t('booking.location.datesPending')
                       : locations.find(l => l.id === formData.location)?.status === 'confirmed'
-                        ? 'Limited guest spot — book early to secure'
-                        : '2-4 weeks typical lead time'
+                        ? t('booking.location.limitedGuest')
+                        : t('booking.location.leadTime')
                     }
                   </p>
                 </motion.div>
@@ -1112,7 +1113,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               whileTap={currentStep > 0 ? { scale: 0.98 } : {}}
             >
               <ArrowLeft className="w-3 h-3" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Previous</span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em]">{t('buttons.previous')}</span>
             </motion.button>
 
             {currentStep < steps.length - 1 ? (
@@ -1128,7 +1129,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 />
-                <span className="relative z-10 font-mono text-[10px] uppercase tracking-[0.2em]">Continue</span>
+                <span className="relative z-10 font-mono text-[10px] uppercase tracking-[0.2em]">{t('buttons.continue')}</span>
                 <ArrowRight className="relative z-10 w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.button>
             ) : (
@@ -1155,11 +1156,11 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       animate={{ rotate: 360 }}
                       transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                     />
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Sending...</span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em]">{t('buttons.sending')}</span>
                   </>
                 ) : (
                   <>
-                    <span className="relative z-10 font-mono text-[10px] uppercase tracking-[0.2em]">Submit Request</span>
+                    <span className="relative z-10 font-mono text-[10px] uppercase tracking-[0.2em]">{t('buttons.submitRequest')}</span>
                     <Send className="relative z-10 w-3 h-3 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
                   </>
                 )}
@@ -1186,7 +1187,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
       {/* Bottom Corner Details */}
       <div className="fixed bottom-6 left-6 font-mono text-[9px] uppercase tracking-[0.2em] text-black/20 z-40 hidden md:block">
-        Step {currentStep + 1} of {steps.length}
+        {t('booking.stepIndicator', { current: currentStep + 1, total: steps.length })}
       </div>
       <div className="fixed bottom-6 right-6 font-mono text-[9px] uppercase tracking-[0.2em] text-black/20 z-40 hidden md:block">
         Miami, FL

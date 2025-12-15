@@ -325,6 +325,7 @@ const ScrollAnimatedTitle: React.FC<{
 const Preloader: React.FC<{
   onTransitionStart: () => void;
 }> = ({ onTransitionStart }) => {
+  const { t } = useTranslation();
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -446,7 +447,7 @@ const Preloader: React.FC<{
 
           <div className="flex justify-between items-center mt-4">
             <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-black/30">
-              {count < 100 ? 'Loading' : 'Ready'}
+              {count < 100 ? t('preloader.loading') : t('preloader.ready')}
             </span>
             <div className="flex items-baseline gap-0.5">
               <span className="font-mono text-xs text-black/60 tabular-nums w-6 text-right">
@@ -465,7 +466,7 @@ const Preloader: React.FC<{
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
       >
-        Est. 2020
+        {t('preloader.established')}
       </motion.span>
       <motion.span
         className="absolute top-8 right-8 font-mono text-[9px] uppercase tracking-[0.2em] text-black/30"
@@ -473,7 +474,7 @@ const Preloader: React.FC<{
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3 }}
       >
-        Miami / NYC
+        {t('preloader.location')}
       </motion.span>
       <motion.span
         className="absolute bottom-8 left-8 font-mono text-[9px] uppercase tracking-[0.2em] text-black/20"
@@ -481,7 +482,7 @@ const Preloader: React.FC<{
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
       >
-        Portfolio '25
+        {t('preloader.portfolio')}
       </motion.span>
     </motion.div>
   );
@@ -489,6 +490,7 @@ const Preloader: React.FC<{
 
 // Suggest City Form - Inline mini form
 const SuggestCityForm: React.FC = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [city, setCity] = useState('');
   const [email, setEmail] = useState('');
@@ -538,7 +540,7 @@ const SuggestCityForm: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </motion.div>
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em]">Thanks! I'll consider {city}</span>
+            <span className="font-mono text-[9px] uppercase tracking-[0.2em]">{t('studios.suggest.thanks', { city })}</span>
           </motion.div>
         ) : !isOpen ? (
           <motion.button
@@ -549,9 +551,9 @@ const SuggestCityForm: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <span className="text-ink-black/40 group-hover:text-ink-black/60">or</span>
+            <span className="text-ink-black/40 group-hover:text-ink-black/60">{t('studios.suggest.or')}</span>
             <span className="underline underline-offset-2 decoration-petal group-hover:decoration-coral group-hover:bg-petal/30 px-1 -mx-1 rounded transition-all">
-              suggest a new city
+              {t('studios.suggest.link')}
             </span>
           </motion.button>
         ) : (
@@ -567,7 +569,7 @@ const SuggestCityForm: React.FC = () => {
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full border border-dashed border-coral/30" />
                 <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">
-                  Suggest a city
+                  {t('studios.suggest.title')}
                 </span>
               </div>
               <button
@@ -583,26 +585,26 @@ const SuggestCityForm: React.FC = () => {
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="block font-mono text-[8px] uppercase tracking-[0.2em] text-black/30 mb-2">
-                  City *
+                  {t('studios.suggest.cityLabel')}
                 </label>
                 <input
                   type="text"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  placeholder="Tokyo, London..."
+                  placeholder={t('studios.suggest.cityPlaceholder')}
                   className="w-full bg-transparent border-b border-black/20 focus:border-coral/50 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                   autoFocus
                 />
               </div>
               <div>
                 <label className="block font-mono text-[8px] uppercase tracking-[0.2em] text-black/20 mb-2">
-                  Email <span className="text-black/15">(optional)</span>
+                  {t('studios.suggest.emailLabel')} <span className="text-black/15">{t('studios.suggest.optional')}</span>
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Get notified"
+                  placeholder={t('studios.suggest.emailPlaceholder')}
                   className="w-full bg-transparent border-b border-black/10 focus:border-coral/30 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/15 transition-colors duration-300"
                 />
               </div>
@@ -622,7 +624,7 @@ const SuggestCityForm: React.FC = () => {
                 />
               ) : (
                 <>
-                  <span>Send suggestion</span>
+                  <span>{t('studios.suggest.submit')}</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </>
               )}
@@ -635,6 +637,7 @@ const SuggestCityForm: React.FC = () => {
 };
 
 const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking }) => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
 
@@ -718,12 +721,12 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         <motion.div className="absolute top-28 left-12 z-20 hidden md:block" style={{ y: cornerTopLeftY, opacity: elementsOpacity }} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.5, duration: 0.8 }}>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
-              <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/25">Location</span>
+              <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/25">{t('hero.location')}</span>
               <ScrambleCoordinate finalValue="25.7617° N" delay={1.8} />
               <ScrambleCoordinate finalValue="80.1918° W" delay={2.0} />
             </div>
             <div className="flex flex-col gap-1">
-              <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/25">Next Guests</span>
+              <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/25">{t('hero.nextGuests')}</span>
               <div className="flex flex-col gap-0.5">
                 {['Zurich', 'Valencia', 'New York', 'Vienna'].map((city, i) => (
                   <ScrambleCity key={city} finalValue={city} delay={2.5 + i * 0.3} />
@@ -736,10 +739,10 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         {/* Top Right - Simplified on mobile */}
         <motion.div className="absolute top-20 right-4 md:top-28 md:right-12 z-20" style={{ y: cornerTopRightY, opacity: elementsOpacity }} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.6, duration: 0.8 }}>
           <div className="flex flex-col items-end gap-1">
-            <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.3em] text-black/25">Status</span>
+            <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.3em] text-black/25">{t('hero.status')}</span>
             <div className="flex items-center gap-2">
               <motion.div className="w-1.5 h-1.5 rounded-full bg-sage" animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity }} />
-              <span className="font-mono text-[9px] md:text-[10px] text-black/50">Now booking</span>
+              <span className="font-mono text-[9px] md:text-[10px] text-black/50">{t('hero.nowBooking')}</span>
             </div>
           </div>
         </motion.div>
@@ -747,20 +750,20 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         {/* Bottom Right - Adjusted for mobile */}
         <motion.div className="absolute bottom-24 right-4 md:bottom-12 md:right-12 z-20" style={{ y: cornerBottomRightY, opacity: elementsOpacity }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8, duration: 0.8 }}>
           <div className="flex flex-col items-end gap-2">
-            <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.3em] text-black/25">Follow</span>
+            <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.3em] text-black/25">{t('hero.follow')}</span>
             <a href="https://www.instagram.com/seaphiya.tat/" target="_blank" rel="noopener noreferrer" className="font-mono text-[9px] md:text-[10px] text-black/40 hover:text-ink-black transition-colors duration-300">Instagram</a>
           </div>
         </motion.div>
 
         <motion.div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 z-10 hidden md:flex flex-col items-center gap-4" style={{ y: sideLeftY, opacity: elementsOpacity }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2, duration: 0.8 }}>
           <div className="h-16 w-[1px] bg-gradient-to-b from-transparent to-black/20" />
-          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/20 rotate-180" style={{ writingMode: 'vertical-rl' }}>Fine Line Art</span>
+          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/20 rotate-180" style={{ writingMode: 'vertical-rl' }}>{t('styles.fineLineArt')}</span>
           <div className="h-16 w-[1px] bg-gradient-to-t from-transparent to-black/20" />
         </motion.div>
 
         <motion.div className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-10 hidden md:flex flex-col items-center gap-4" style={{ y: sideRightY, opacity: elementsOpacity }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.1, duration: 0.8 }}>
           <div className="h-16 w-[1px] bg-gradient-to-b from-transparent to-black/20" />
-          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/20" style={{ writingMode: 'vertical-rl' }}>By Appointment</span>
+          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/20" style={{ writingMode: 'vertical-rl' }}>{t('hero.byAppointment')}</span>
           <div className="h-16 w-[1px] bg-gradient-to-t from-transparent to-black/20" />
         </motion.div>
 
@@ -768,8 +771,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         <motion.div style={{ y: heroTextY, opacity: heroOpacity }} className="absolute inset-0 z-10 flex flex-col items-center">
           {/* Top section - Est. 2020 positioned above title */}
           <motion.div className="absolute top-[calc(50%-12vw)] md:top-[calc(50%-10vw)] w-[82vw] md:w-[75vw] lg:w-[68vw] flex justify-between text-[9px] md:text-[10px] font-mono uppercase tracking-[0.2em] opacity-40 text-ink-black" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 0.4, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}>
-            <span>Est. 2020</span>
-            <span>Miami — New York</span>
+            <span>{t('hero.established')}</span>
+            <span>{t('hero.cities')}</span>
           </motion.div>
 
           {/* Bottom section - Quote and badges below title */}
@@ -789,7 +792,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 1.2, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
               >
-                Gently,
+                {t('hero.tagline.center1')}
               </motion.span>
               <motion.span
                 className="text-black/90"
@@ -797,13 +800,13 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 1.2, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
               >
-                forever
+                {t('hero.tagline.center2')}
               </motion.span>
             </motion.div>
 
             <motion.div className="flex items-center justify-center gap-4 mt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8, duration: 0.8 }}>
               <motion.div className="w-8 md:w-12 h-[1px] bg-black/20" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 1.9, duration: 0.6 }} style={{ originX: 1 }} />
-              <span className="font-mono text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-black/30">Specializing in</span>
+              <span className="font-mono text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-black/30">{t('hero.specializing')}</span>
               <motion.div className="w-8 md:w-12 h-[1px] bg-black/20" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 1.9, duration: 0.6 }} style={{ originX: 0 }} />
             </motion.div>
 
@@ -814,7 +817,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 scale: badgesScale,
               }}
             >
-              {['Fine Line', 'Micro-Realism', 'Botanical', 'Minimalist'].map((tag, i) => (
+              {[t('styles.fineLine'), t('styles.microRealism'), t('styles.botanical'), t('styles.minimalist')].map((tag, i) => (
                 <motion.span
                   key={tag}
                   className="px-3 py-1.5 border border-black/10 rounded-full font-mono text-[8px] md:text-[9px] uppercase tracking-[0.15em] text-black/40"
@@ -853,7 +856,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
 
         {/* Scroll Indicator - Hidden on mobile to avoid clutter */}
         <motion.div style={{ y: scrollIndicatorY, opacity: scrollIndicatorOpacity }} className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2">
-          <motion.span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/25" animate={{ opacity: [0.25, 0.5, 0.25] }} transition={{ duration: 2, repeat: Infinity }}>Scroll</motion.span>
+          <motion.span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/25" animate={{ opacity: [0.25, 0.5, 0.25] }} transition={{ duration: 2, repeat: Infinity }}>{t('hero.scroll')}</motion.span>
           <motion.div className="h-10 w-[1px] bg-gradient-to-b from-black/30 to-transparent" animate={{ scaleY: [1, 0.6, 1] }} transition={{ duration: 2, repeat: Infinity }} />
         </motion.div>
       </section>
@@ -879,12 +882,12 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   viewport={{ once: true }}
                 >
                   <div className="w-12 h-[1px] bg-black/40"></div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/60">The Artist</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/60">{t('about.title')}</span>
                 </motion.div>
 
                 <div className="text-xl md:text-2xl lg:text-3xl font-light tracking-wide text-left leading-[1.6] text-black/90">
                   <ScrollRevealText>
-                    Specializing in fine line and micro-realism. Creating pieces that breathe, move, and age with grace. Every line is deliberate.
+                    {t('about.description')}
                   </ScrollRevealText>
                 </div>
 
@@ -896,7 +899,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.6 }}
                 >
-                  {['Fine Line', 'Micro-Realism', 'Botanical', 'Minimalist'].map((tag, i) => (
+                  {[t('styles.fineLine'), t('styles.microRealism'), t('styles.botanical'), t('styles.minimalist')].map((tag, i) => (
                     <motion.span
                       key={tag}
                       className="px-3 py-1.5 border border-black/10 rounded-full font-mono text-[8px] md:text-[9px] uppercase tracking-[0.15em] text-black/40"
@@ -926,8 +929,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 >
                   <h4 className="font-editorial italic text-3xl md:text-4xl text-ink-black">Seaphiya</h4>
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] mt-3 text-black/50 leading-relaxed">
-                    Fine Line Artist<br/>
-                    Miami, FL — Noble Art Studio
+                    {t('about.profession')}<br/>
+                    {t('about.location')}
                   </p>
 
                   {/* CTA Button */}
@@ -937,7 +940,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span>Book a Session</span>
+                    <span>{t('about.cta')}</span>
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
                   </motion.button>
                 </motion.div>
@@ -970,7 +973,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               >
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-sage animate-pulse" />
-                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/60">Available</span>
+                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/60">{t('about.available')}</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -981,8 +984,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         <section id="studios" className="bg-paper-white border-t border-black/10 relative">
           {/* Section header */}
           <div className="relative bg-paper-white/90 border-b border-black/10 px-6 py-6 flex justify-between items-center z-20">
-            <span className="font-mono text-xs uppercase tracking-widest">[ Studios & Guests ]</span>
-            <span className="font-mono text-xs uppercase tracking-widest">Worldwide</span>
+            <span className="font-mono text-xs uppercase tracking-widest">{t('studios.title')}</span>
+            <span className="font-mono text-xs uppercase tracking-widest">{t('studios.worldwide')}</span>
           </div>
 
           {/* Three columns: Studios / Past Guests / Upcoming */}
@@ -998,13 +1001,13 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               >
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-2 h-2 rounded-full bg-sage" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50">Studios</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50">{t('studios.studiosLabel')}</span>
                 </div>
 
                 <div className="space-y-6">
                   {[
-                    { studio: 'Noble Art', location: 'Miami, FL', status: 'Current' },
-                    { studio: 'Noble Art', location: 'Valencia, ES', status: '2020 — 2023' },
+                    { studio: 'Noble Art', location: t('studios.locations.miami'), status: t('studios.current') },
+                    { studio: 'Noble Art', location: t('studios.locations.valencia'), status: '2020 — 2023' },
                   ].map((item, idx) => (
                     <motion.div
                       key={idx}
@@ -1043,7 +1046,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               >
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-2 h-2 rounded-full bg-black/30" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50">Past Guest Spots</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50">{t('studios.pastGuestSpots')}</span>
                 </div>
 
                 <div className="relative">
@@ -1127,7 +1130,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                     animate={{ opacity: [1, 0.4, 1], scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50">Upcoming</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50">{t('studios.upcoming')}</span>
                 </div>
 
                 <div className="relative">
@@ -1191,7 +1194,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.8, duration: 0.4 }}
                               >
-                                Next
+                                {t('studios.next')}
                               </motion.span>
                             )}
                           </div>
@@ -1233,7 +1236,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-black/80 group-hover:text-ink-black">Book a guest spot</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-black/80 group-hover:text-ink-black">{t('studios.bookGuestSpot')}</span>
                   <ArrowRight className="w-3 h-3 text-ink-black/60 group-hover:text-ink-black group-hover:translate-x-1 transition-all" />
                 </motion.button>
 
@@ -1249,16 +1252,16 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         {/* GALLERY */}
         <section id="work" className="bg-paper-white border-t border-black/10 relative z-30">
           <div className="relative bg-paper-white/90 border-b border-black/10 px-6 py-6 flex justify-between items-center z-40">
-            <span className="font-mono text-xs uppercase tracking-widest">[ Selected Works ]</span>
-            <span className="font-mono text-xs uppercase tracking-widest">2020 — 2025</span>
+            <span className="font-mono text-xs uppercase tracking-widest">{t('work.title')}</span>
+            <span className="font-mono text-xs uppercase tracking-widest">{t('work.years')}</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2">
             {[
-              { id: '01', title: 'Fine Line Art', img: images.tattoo1 },
-              { id: '02', title: 'Micro Realism', img: images.tattoo2 },
-              { id: '03', title: 'Botanical Flow', img: images.tattoo3 },
-              { id: '04', title: 'Delicate Details', img: images.tattoo4 }
+              { id: '01', title: t('work.items.fineLineArt'), img: images.tattoo1 },
+              { id: '02', title: t('work.items.microRealism'), img: images.tattoo2 },
+              { id: '03', title: t('work.items.botanicalFlow'), img: images.tattoo3 },
+              { id: '04', title: t('work.items.delicateDetails'), img: images.tattoo4 }
             ].map((item, idx) => (
               <div key={idx} className="relative group border-b border-r border-black/10 h-[80vh] overflow-hidden">
                 <div className="absolute inset-0 bg-paper-white">
@@ -1277,7 +1280,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   </div>
                   <div className="mix-blend-difference translate-y-[20px] blur-md group-hover:translate-y-0 group-hover:blur-0 transition-all duration-700 delay-[400ms]">
                     <h3 className="text-5xl font-black uppercase italic tracking-tighter text-white">{item.title}</h3>
-                    <p className="font-mono text-xs uppercase mt-2 tracking-widest text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-500">View Case Study</p>
+                    <p className="font-mono text-xs uppercase mt-2 tracking-widest text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-500">{t('work.viewCaseStudy')}</p>
                   </div>
                 </div>
               </div>
@@ -1292,20 +1295,20 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               {/* Animated background reveal */}
               <div className="absolute inset-0 bg-petal scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-left" />
               <div className="relative z-10 text-center">
-                <span className="block font-mono text-xs uppercase tracking-widest mb-4 opacity-50 group-hover:opacity-100 group-hover:text-ink-black transition-all duration-500 delay-100">Make it permanent</span>
-                <span className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none group-hover:text-ink-black transition-colors duration-500">Book<br/>Now</span>
+                <span className="block font-mono text-xs uppercase tracking-widest mb-4 opacity-50 group-hover:opacity-100 group-hover:text-ink-black transition-all duration-500 delay-100">{t('footer.makeItPermanent')}</span>
+                <span className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none group-hover:text-ink-black transition-colors duration-500">{t('footer.bookNow')}</span>
               </div>
             </button>
             <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex-1 flex items-center justify-center group relative overflow-hidden hover:bg-paper-white hover:text-ink-black transition-colors duration-500">
               <div className="text-center">
                 <ArrowUp className="mx-auto w-12 h-12 mb-6 group-hover:-translate-y-4 transition-transform duration-300" />
-                <span className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none">Top</span>
+                <span className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none">{t('footer.top')}</span>
               </div>
             </div>
           </div>
           <div className="p-4 border-t border-white/10 flex justify-between items-center font-mono text-[10px] uppercase tracking-widest">
-            <span>© Seaphiya 2025</span>
-            <a href="https://www.instagram.com/seaphiya.tat/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity duration-300">Instagram</a>
+            <span>{t('footer.copyright')}</span>
+            <a href="https://www.instagram.com/seaphiya.tat/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity duration-300">{t('footer.instagram')}</a>
           </div>
         </footer>
       </div>
