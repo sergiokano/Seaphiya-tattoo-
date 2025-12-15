@@ -39,23 +39,23 @@
   },
   "about": {
     "title": "La Artista",
-    "description": "Especializándome en fine line y micro realismo. Creando piezas que respiran, se mueven y envejecen con gracia.",
-    "profession": "Artista de Fine Line",
+    "description": "Especializándome en fine line y micro-realism. Creando piezas que respiran, se mueven y envejecen con gracia.",
+    "profession": "Fine Line Artist",
     "location": "Miami, FL — Noble Art Studio",
     "cta": "Reservar Sesión"
   },
   "studios": {
-    "title": "[ Estudios & Guestspots ]",
-    "worldwide": "Por Todo el Mundo",
-    "cta": "Reservar guestspot",
+    "title": "[ Studios & Guest Spots ]",
+    "worldwide": "Worldwide",
+    "cta": "Book a guest spot",
     "suggest": {
       "thanks": "¡Gracias! Consideraré {city}"
     }
   },
   "gallery": {
-    "title": "[ Trabajos Seleccionados ]",
+    "title": "[ Selected Works ]",
     "years": "2020 — 2025",
-    "viewCaseStudy": "Ver Estudio de Caso"
+    "viewCaseStudy": "View Case Study"
   },
   "footer": {
     "copyright": "© Seaphiya 2025",
