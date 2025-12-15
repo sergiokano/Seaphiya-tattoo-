@@ -6,6 +6,7 @@
     "navigation": {
       "work": "Trabajo",
       "about": "Sobre mí",
+      "info": "Info",
       "bookNow": "Reservar"
     }
   },
@@ -26,7 +27,15 @@
     "locationFull": "Miami — Nueva York",
     "specializing": "Especializándome en",
     "scroll": "Desplazarse",
-    "byAppointment": "Por Cita"
+    "byAppointment": "Por Cita",
+    "tagline": {
+      "gently": "Suavemente",
+      "forever": "para siempre",
+      "left": "Fine Line Art",
+      "center1": "Suavemente,",
+      "center2": "para siempre",
+      "right": "Por Cita"
+    }
   },
   "about": {
     "title": "La Artista",

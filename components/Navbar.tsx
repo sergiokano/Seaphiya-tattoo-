@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ showBackButton = false, onBack }) => {
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ink-black transition-all duration-300 group-hover:w-full"></span>
               </a>
               <button onClick={openInfo} className="hover:text-coral transition-colors relative group">
-                  Info
+                  {t('navbar.navigation.info')}
                   <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ink-black transition-all duration-300 group-hover:w-full"></span>
               </button>
           </div>

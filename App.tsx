@@ -401,7 +401,7 @@ const Preloader: React.FC<{
           transition={{ delay: 0.6, duration: 0.6 }}
         >
           <div className="font-body font-light text-black/50 lowercase flex justify-center items-center gap-x-[0.4em]">
-            {['gently', 'forever'].map((word, i) => (
+            {[t('hero.tagline.gently'), t('hero.tagline.forever')].map((word, i) => (
               <motion.span
                 key={i}
                 className="inline-block text-xs md:text-sm tracking-[0.35em]"

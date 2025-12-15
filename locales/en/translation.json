@@ -6,6 +6,7 @@
     "navigation": {
       "work": "Work",
       "about": "About",
+      "info": "Info",
       "bookNow": "Book Now"
     }
   },
@@ -26,7 +27,15 @@
     "locationFull": "Miami — New York",
     "specializing": "Specializing in",
     "scroll": "Scroll",
-    "byAppointment": "By Appointment"
+    "byAppointment": "By Appointment",
+    "tagline": {
+      "gently": "Gently",
+      "forever": "forever",
+      "left": "Fine Line Art",
+      "center1": "Gently,",
+      "center2": "forever",
+      "right": "By Appointment"
+    }
   },
   "about": {
     "title": "The Artist",

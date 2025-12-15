@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
-import { ArrowLeft, ArrowRight, Plus, Minus, Clock, Droplets, Sun, Shield, Sparkles, AlertCircle, Check, MessageCircle } from 'lucide-react';
+import { ArrowRight, Plus, Minus, Shield, Sparkles, AlertCircle, Check, MessageCircle } from 'lucide-react';
 import Navbar from './Navbar';
 
 interface InfoPageProps {
@@ -516,21 +516,6 @@ const InfoPage: React.FC<InfoPageProps> = ({ onBack }) => {
         </motion.div>
 
         <div className="max-w-4xl">
-          <motion.div
-            className="flex items-center gap-4 mb-8"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <button
-              onClick={onBack}
-              className="group flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-black/50 hover:text-ink-black transition-colors duration-300"
-            >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
-              <span>Volver</span>
-            </button>
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
