@@ -944,21 +944,21 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                     <motion.div
                       className={`w-2 h-2 rounded-full border transition-all duration-300 ${
                         formData.location === 'suggest'
-                          ? 'bg-amber-400 border-amber-400'
-                          : 'border-dashed border-white/20 group-hover:border-amber-400/50'
+                          ? 'bg-coral border-coral'
+                          : 'border-dashed border-white/20 group-hover:border-coral/50'
                       }`}
                       animate={{ scale: formData.location === 'suggest' ? 1 : 0.8 }}
                     />
                   </div>
                   <span className={`text-xl md:text-2xl font-light tracking-tight transition-all duration-300 ${
-                    formData.location === 'suggest' ? 'text-amber-400' : 'text-white/40 group-hover:text-amber-400/80'
+                    formData.location === 'suggest' ? 'text-coral' : 'text-white/40 group-hover:text-coral/80'
                   }`}>
                     Suggest a city
                   </span>
                   <span className="hidden md:block text-sm text-white/20 flex-1 px-6 italic">
                     Join waitlist for a new city
                   </span>
-                  <span className="ml-auto md:ml-0 font-mono text-[9px] uppercase tracking-wider px-2 py-1 rounded-full border border-dashed border-amber-400/30 text-amber-400/60">
+                  <span className="ml-auto md:ml-0 font-mono text-[9px] uppercase tracking-wider px-2 py-1 rounded-full border border-dashed border-coral/30 text-coral/60">
                     Waitlist
                   </span>
                 </div>
@@ -976,7 +976,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   className="overflow-hidden"
                 >
                   <div className="pt-6 pl-12">
-                    <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-amber-400/60 mb-3">
+                    <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-coral/60 mb-3">
                       Which city would you like me to visit?
                     </label>
                     <input
@@ -984,7 +984,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       value={formData.suggestedCity}
                       onChange={(e) => handleInputChange('suggestedCity', e.target.value)}
                       placeholder="e.g., Tokyo, London, NYC..."
-                      className="w-full max-w-md bg-transparent border-b-2 border-amber-400/30 focus:border-amber-400/60 outline-none py-3 text-lg font-light text-white placeholder:text-white/20 transition-colors duration-300"
+                      className="w-full max-w-md bg-transparent border-b-2 border-coral/30 focus:border-coral/60 outline-none py-3 text-lg font-light text-white placeholder:text-white/20 transition-colors duration-300"
                     />
                     <p className="mt-3 font-mono text-[10px] text-white/30">
                       You'll be added to the waitlist and notified when I plan a visit

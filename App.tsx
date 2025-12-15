@@ -208,8 +208,8 @@ const AnimatedLetter: React.FC<{
         scale: isTransitioning ? 1.08 : 1,
         y: isLoading ? [0, -8, 0] : 0,
         filter: isTransitioning ? 'blur(3px)' : 'blur(0px)',
-        color: isHero ? '#ffffff' : 'transparent',
-        WebkitTextStroke: isHero ? '1px transparent' : '1px #ffffff',
+        color: isHero ? '#faf8f5' : 'transparent',
+        WebkitTextStroke: isHero ? '1px transparent' : '1px #faf8f5',
       }}
       transition={{
         opacity: {
@@ -354,7 +354,7 @@ const Preloader: React.FC<{
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, rgba(250,248,245,0.04) 0%, transparent 60%)',
         }}
         animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
@@ -522,13 +522,13 @@ const SuggestCityForm: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="flex items-center gap-2 text-green-400"
+            className="flex items-center gap-2 text-sage"
           >
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              className="w-4 h-4 rounded-full bg-green-400/20 flex items-center justify-center"
+              className="w-4 h-4 rounded-full bg-sage/20 flex items-center justify-center"
             >
               <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -540,13 +540,13 @@ const SuggestCityForm: React.FC = () => {
           <motion.button
             key="trigger"
             onClick={() => setIsOpen(true)}
-            className="flex items-center gap-2 font-mono text-[9px] text-white/30 hover:text-amber-400/80 transition-colors duration-300"
+            className="flex items-center gap-2 font-mono text-[9px] text-white/30 hover:text-coral/80 transition-colors duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <span className="text-white/20">or</span>
-            <span className="underline underline-offset-2 decoration-white/10 hover:decoration-amber-400/40">
+            <span className="underline underline-offset-2 decoration-white/10 hover:decoration-coral/40">
               suggest a new city
             </span>
           </motion.button>
@@ -561,7 +561,7 @@ const SuggestCityForm: React.FC = () => {
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full border border-dashed border-amber-400/30" />
+                <div className="w-2 h-2 rounded-full border border-dashed border-coral/30" />
                 <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40">
                   Suggest a city
                 </span>
@@ -586,7 +586,7 @@ const SuggestCityForm: React.FC = () => {
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   placeholder="Tokyo, London..."
-                  className="w-full bg-transparent border-b border-white/20 focus:border-amber-400/50 outline-none py-2 text-sm font-light text-white placeholder:text-white/20 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-white/20 focus:border-coral/50 outline-none py-2 text-sm font-light text-white placeholder:text-white/20 transition-colors duration-300"
                   autoFocus
                 />
               </div>
@@ -599,7 +599,7 @@ const SuggestCityForm: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Get notified"
-                  className="w-full bg-transparent border-b border-white/10 focus:border-amber-400/30 outline-none py-2 text-sm font-light text-white placeholder:text-white/15 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-white/10 focus:border-coral/30 outline-none py-2 text-sm font-light text-white placeholder:text-white/15 transition-colors duration-300"
                 />
               </div>
             </div>
@@ -607,12 +607,12 @@ const SuggestCityForm: React.FC = () => {
             <motion.button
               onClick={handleSubmit}
               disabled={!city.trim() || isSubmitting}
-              className="group flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.2em] text-amber-400/70 hover:text-amber-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300"
+              className="group flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.2em] text-coral/70 hover:text-coral disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300"
               whileHover={city.trim() ? { x: 4 } : {}}
             >
               {isSubmitting ? (
                 <motion.div
-                  className="w-3 h-3 border border-amber-400 border-t-transparent rounded-full"
+                  className="w-3 h-3 border border-coral border-t-transparent rounded-full"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
                 />
@@ -734,7 +734,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
           <div className="flex flex-col items-end gap-1">
             <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.3em] text-white/25">Status</span>
             <div className="flex items-center gap-2">
-              <motion.div className="w-1.5 h-1.5 rounded-full bg-green-400" animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity }} />
+              <motion.div className="w-1.5 h-1.5 rounded-full bg-sage" animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity }} />
               <span className="font-mono text-[9px] md:text-[10px] text-white/50">Now booking</span>
             </div>
           </div>
@@ -833,8 +833,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   }}
                   whileHover={{
                     scale: 1.08,
-                    borderColor: 'rgba(255,255,255,0.5)',
-                    color: 'rgba(255,255,255,0.9)',
+                    borderColor: 'rgba(250,248,245,0.5)',
+                    color: 'rgba(250,248,245,0.9)',
                     y: -2,
                     transition: { duration: 0.2 }
                   }}
@@ -902,8 +902,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                       transition={{ delay: 0.5 + i * 0.08, duration: 0.5 }}
                       whileHover={{
                         scale: 1.05,
-                        borderColor: 'rgba(255,255,255,0.4)',
-                        color: 'rgba(255,255,255,0.8)',
+                        borderColor: 'rgba(250,248,245,0.4)',
+                        color: 'rgba(250,248,245,0.8)',
                         y: -1,
                         transition: { duration: 0.25 }
                       }}
@@ -965,7 +965,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 transition={{ delay: 0.6 }}
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <div className="w-2 h-2 rounded-full bg-sage animate-pulse" />
                   <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/60">Available</span>
                 </div>
               </motion.div>
@@ -993,7 +993,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-2 h-2 rounded-full bg-green-400" />
+                  <div className="w-2 h-2 rounded-full bg-sage" />
                   <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">Studios</span>
                 </div>
 
@@ -1018,7 +1018,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                           {item.location}
                         </p>
                         <span className={`font-mono text-[9px] uppercase tracking-[0.15em] ${
-                          item.status === 'Current' ? 'text-green-400/70' : 'text-white/25'
+                          item.status === 'Current' ? 'text-sage/70' : 'text-white/25'
                         }`}>
                           {item.status}
                         </span>
@@ -1119,7 +1119,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               >
                 <div className="flex items-center gap-3 mb-8">
                   <motion.div
-                    className="w-2 h-2 rounded-full bg-amber-400"
+                    className="w-2 h-2 rounded-full bg-coral"
                     animate={{ opacity: [1, 0.4, 1], scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
@@ -1129,7 +1129,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 <div className="relative">
                   {/* Vertical timeline line - animated gradient */}
                   <motion.div
-                    className="absolute left-0 top-2 bottom-2 w-[1px] bg-gradient-to-b from-amber-400/40 via-amber-400/20 to-transparent"
+                    className="absolute left-0 top-2 bottom-2 w-[1px] bg-gradient-to-b from-coral/40 via-coral/20 to-transparent"
                     initial={{ scaleY: 0 }}
                     whileInView={{ scaleY: 1 }}
                     viewport={{ once: true }}
@@ -1156,7 +1156,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         {/* Timeline dot - pulsing for next */}
                         <motion.div
                           className={`absolute -left-6 top-2 w-2 h-2 rounded-full transition-colors duration-300 ${
-                            item.isNext ? 'bg-amber-400' : 'bg-amber-400/30 group-hover:bg-amber-400/60'
+                            item.isNext ? 'bg-coral' : 'bg-coral/30 group-hover:bg-coral/60'
                           }`}
                           initial={{ scale: 0 }}
                           whileInView={{ scale: 1 }}
@@ -1167,7 +1167,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         {/* Glow ring for next */}
                         {item.isNext && (
                           <motion.div
-                            className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-amber-400/30"
+                            className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-coral/30"
                             animate={{ scale: [1, 2.5, 1], opacity: [0.6, 0, 0.6] }}
                             transition={{ duration: 2, repeat: Infinity }}
                           />
@@ -1182,7 +1182,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                             </h4>
                             {item.isNext && (
                               <motion.span
-                                className="font-mono text-[8px] uppercase tracking-[0.2em] px-2 py-0.5 bg-amber-400/20 text-amber-400 rounded-full"
+                                className="font-mono text-[8px] uppercase tracking-[0.2em] px-2 py-0.5 bg-coral/20 text-coral rounded-full"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.8, duration: 0.4 }}
@@ -1192,7 +1192,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                             )}
                           </div>
                           <span className={`font-mono text-[9px] transition-colors duration-300 ${
-                            item.isNext ? 'text-amber-400' : 'text-amber-400/50 group-hover:text-amber-400/80'
+                            item.isNext ? 'text-coral' : 'text-coral/50 group-hover:text-coral/80'
                           }`}>
                             {item.dates}
                           </span>
@@ -1208,7 +1208,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         </div>
                         {/* Underline on hover */}
                         <motion.div
-                          className="absolute -bottom-1 left-0 h-[1px] bg-amber-400/30"
+                          className="absolute -bottom-1 left-0 h-[1px] bg-coral/30"
                           initial={{ width: 0 }}
                           whileHover={{ width: '100%' }}
                           transition={{ duration: 0.3 }}
