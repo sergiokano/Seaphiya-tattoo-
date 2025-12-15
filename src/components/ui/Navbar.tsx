@@ -82,15 +82,9 @@ const Navbar = ({ showBackButton = false, onBack }: NavbarProps) => {
           </button>
         )}
         <div className="flex flex-col">
-          {showBackButton ? (
-            <Link href="/" className="text-2xl font-display font-semibold tracking-tighter leading-none hover:opacity-70 transition-opacity duration-300">
-              {t('brand')}
-            </Link>
-          ) : (
-            <a href="#" onClick={scrollToTop} className="text-2xl font-display font-semibold tracking-tighter leading-none hover:opacity-70 transition-opacity duration-300">
-              {t('brand')}
-            </a>
-          )}
+          <Link href="/" className="text-2xl font-display font-semibold tracking-tighter leading-none hover:opacity-70 transition-opacity duration-300">
+            {t('brand')}
+          </Link>
           <span className="font-mono text-[10px] uppercase tracking-widest opacity-60 mt-1">{t('subtitle')}</span>
         </div>
       </div>

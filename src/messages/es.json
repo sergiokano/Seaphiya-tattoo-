@@ -1,4 +1,132 @@
 {
+  "info": {
+    "hero": {
+      "label": "Todo lo que necesitas saber",
+      "title1": "Tu piel,",
+      "title2": "mis reglas",
+      "subtitle": "No es burocracia. Es que quiero que tu tatuaje quede perfecto y dure toda la vida. Lee esto antes de venir."
+    },
+    "intro": {
+      "text": "Mira, tatuarte es una decisión importante. Y quiero que sea una experiencia que recuerdes con cariño, no con arrepentimiento. Por eso necesito que leas esto."
+    },
+    "flowPicker": {
+      "title": "¿Qué te trae por aquí?",
+      "preTattoo": {
+        "title": "Quiero hacerme un tatuaje",
+        "desc": "Guía completa de preparación"
+      },
+      "postTattoo": {
+        "title": "Ya tengo mi tatuaje",
+        "desc": "Cuidados y cicatrización"
+      }
+    },
+    "before": {
+      "label": "Antes de venir",
+      "title": "Prepárate bien",
+      "subtitle": "Tu cuerpo es mi lienzo. Cuídalo antes de la cita.",
+      "items": {
+        "sleep": {
+          "title": "Duerme bien",
+          "desc": "Tu piel regenera mientras duermes. Una noche de insomnio = piel irritada = tatuaje más difícil."
+        },
+        "eat": {
+          "title": "Come algo",
+          "desc": "No vengas en ayunas. El azúcar baja, te mareas, y tenemos que parar. Come 1-2 horas antes."
+        },
+        "hydrate": {
+          "title": "Hidrátate",
+          "desc": "Piel hidratada absorbe mejor la tinta. Bebe agua los días previos. Tu tatuaje te lo agradecerá."
+        },
+        "alcohol": {
+          "title": "Nada de alcohol",
+          "desc": "El alcohol dilata los vasos. Más sangrado = peor resultado. 24 horas sin beber antes de la cita."
+        },
+        "clothes": {
+          "title": "Ropa cómoda",
+          "desc": "Vas a pasar un rato sin moverte. Trae ropa que permita acceso fácil a la zona y que te permita relajarte."
+        },
+        "lotion": {
+          "title": "Sin cremas",
+          "desc": "No apliques cremas ni lociones en la zona el día de la cita. La piel tiene que estar limpia y seca."
+        }
+      }
+    },
+    "during": {
+      "label": "El día del tatuaje",
+      "title": "Confía en el proceso",
+      "subtitle": "Ya estás aquí. Ahora solo disfruta.",
+      "items": {
+        "time": {
+          "title": "Llega puntual",
+          "desc": "10 minutos antes es perfecto. Así te relajas, revisamos el diseño y empezamos sin prisas."
+        },
+        "snacks": {
+          "title": "Trae snacks",
+          "desc": "Para sesiones largas, trae algo de picar y agua. Una barrita, frutos secos, lo que te guste."
+        },
+        "entertainment": {
+          "title": "Entretenimiento",
+          "desc": "Auriculares, un libro, tu serie favorita en el móvil. Lo que te ayude a desconectar."
+        },
+        "breaks": {
+          "title": "Pide pausas",
+          "desc": "Si necesitas un descanso, solo dilo. Prefiero parar 5 minutos que tatuar con incomodidad."
+        },
+        "trust": {
+          "title": "Confía",
+          "desc": "He tatuado cientos de piezas. Sé lo que hago. Relájate y déjame crear algo bonito para ti."
+        }
+      }
+    },
+    "after": {
+      "label": "Cuidados después",
+      "title": "Haz que dure para siempre",
+      "subtitle": "Los primeros días son cruciales. Cuídalo bien y te durará toda la vida.",
+      "phase1": {
+        "title": "Primeras 48 horas",
+        "items": [
+          "Deja el vendaje 2-4 horas (o lo que te diga)",
+          "Lava suavemente con jabón neutro sin fragancia",
+          "Seca con papel de cocina limpio, sin frotar",
+          "Aplica una capa fina de crema cicatrizante"
+        ]
+      },
+      "avoid": {
+        "title": "Evita esto",
+        "items": [
+          "Piscinas, jacuzzis y bañeras durante 2 semanas",
+          "Sol directo sobre el tatuaje fresco",
+          "Rascarte o arrancar las costras"
+        ]
+      },
+      "timeline": {
+        "title": "Proceso de cicatrización",
+        "phases": {
+          "week1": {
+            "label": "Días 1-3",
+            "desc": "Rojez e hinchazón normal. Tu piel está sanando."
+          },
+          "week2": {
+            "label": "Días 4-7",
+            "desc": "Empieza a pelar. NO te rasques por mucho que pique."
+          },
+          "week3": {
+            "label": "Semanas 2-3",
+            "desc": "La capa externa sana. Puede verse blanquecino, es normal."
+          },
+          "week4": {
+            "label": "Semana 4+",
+            "desc": "Cicatrización completa. Tu tatuaje ya está asentado."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Vamos a ello?",
+      "subtitle": "Ya sabes todo lo que necesitas. Ahora solo falta dar el paso.",
+      "button": "Reservar sesión"
+    }
+  },
   "metadata": {
     "home": {
       "title": "Seaphiya | Tatuadora Fine Line en Miami",
@@ -10,7 +138,7 @@
     },
     "booking": {
       "title": "Reserva Tu Sesión de Tatuaje | Seaphiya Miami",
-      "description": "¿Lista para tu nuevo tatuaje? Reserva una sesión con Seaphiya, tatuadora fine line en Miami. Especializada en micro realismo, botánico y diseños minimalistas."
+      "description": "¿Quieres tu nuevo tatuaje? Reserva una sesión con Seaphiya, tatuadora fine line en Miami. Especializada en micro realismo, botánico y diseños minimalistas."
     }
   },
   "navbar": {
@@ -61,19 +189,19 @@
     "cta": "Reservar Sesión"
   },
   "studios": {
-    "title": "[ Estudios & Colaboraciones ]",
+    "title": "[ Estudios & Guests ]",
     "worldwide": "Worldwide",
-    "studiosLabel": "Estudios",
-    "pastGuestSpots": "Estudios de Tattoo & Guests",
-    "upcoming": "Próximos Estudios",
+    "studios": "Estudios",
+    "pastGuests": "Guest Spots Anteriores",
+    "upcoming": "Próximos",
     "next": "Próximo",
-    "bookGuestSpot": "Reservar en Estudio",
+    "bookGuestSpot": "Reservar guest spot",
     "current": "Actual",
     "locations": {
       "miami": "Miami",
       "valencia": "Valencia"
     },
-    "cta": "Book a guest spot",
+    "cta": "Reservar guest spot",
     "suggest": {
       "title": "¿Tu ciudad?",
       "cityLabel": "Ciudad",
@@ -171,10 +299,10 @@
     "small": "Pequeño",
     "medium": "Mediano",
     "large": "Grande",
-    "tinyDesc": "Menos de 1 pulgada",
-    "smallDesc": "1-3 pulgadas",
-    "mediumDesc": "3-6 pulgadas",
-    "largeDesc": "Más de 6 pulgadas"
+    "tinyDesc": "Menos de 2.5 cm (< 1\")",
+    "smallDesc": "2.5-7.5 cm (1-3\")",
+    "mediumDesc": "7.5-15 cm (3-6\")",
+    "largeDesc": "Más de 15 cm (> 6\")"
   },
   "budgets": {
     "range1": "$200 - $400",
@@ -184,7 +312,15 @@
   },
   "common": {
     "email": "Correo Electrónico",
-    "optional": "(opcional)"
+    "optional": "(opcional)",
+    "selected": "Seleccionado"
+  },
+  "notFound": {
+    "title": "Fuera del trazo",
+    "code": "404",
+    "subtitle": "Página no encontrada",
+    "description": "Este camino no estaba en el diseño. Volvamos a crear.",
+    "backHome": "Volver al Inicio"
   },
   "steps": {
     "step1": {

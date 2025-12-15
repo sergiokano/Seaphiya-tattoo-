@@ -1,4 +1,132 @@
 {
+  "info": {
+    "hero": {
+      "label": "Everything you need to know",
+      "title1": "Your skin,",
+      "title2": "my rules",
+      "subtitle": "This isn't red tape. I want your tattoo to be perfect and last a lifetime. Read this before you come in."
+    },
+    "intro": {
+      "text": "Look, getting a tattoo is a big decision. And I want it to be an experience you remember fondly, not with regret. That's why I need you to read this."
+    },
+    "flowPicker": {
+      "title": "What brings you here?",
+      "preTattoo": {
+        "title": "I want to get a tattoo",
+        "desc": "Complete preparation guide"
+      },
+      "postTattoo": {
+        "title": "I already got my tattoo",
+        "desc": "Aftercare & healing"
+      }
+    },
+    "before": {
+      "label": "Before you come",
+      "title": "Prepare well",
+      "subtitle": "Your body is my canvas. Take care of it before your appointment.",
+      "items": {
+        "sleep": {
+          "title": "Sleep well",
+          "desc": "Your skin regenerates while you sleep. A sleepless night = irritated skin = harder tattoo."
+        },
+        "eat": {
+          "title": "Eat something",
+          "desc": "Don't come on an empty stomach. Blood sugar drops, you get dizzy, we have to stop. Eat 1-2 hours before."
+        },
+        "hydrate": {
+          "title": "Stay hydrated",
+          "desc": "Hydrated skin absorbs ink better. Drink water in the days before. Your tattoo will thank you."
+        },
+        "alcohol": {
+          "title": "No alcohol",
+          "desc": "Alcohol dilates blood vessels. More bleeding = worse result. 24 hours sober before the appointment."
+        },
+        "clothes": {
+          "title": "Comfortable clothes",
+          "desc": "You'll be still for a while. Wear clothes that allow easy access to the area and let you relax."
+        },
+        "lotion": {
+          "title": "No lotions",
+          "desc": "Don't apply creams or lotions to the area on the day. The skin needs to be clean and dry."
+        }
+      }
+    },
+    "during": {
+      "label": "The day of",
+      "title": "Trust the process",
+      "subtitle": "You're here now. Just enjoy it.",
+      "items": {
+        "time": {
+          "title": "Arrive on time",
+          "desc": "10 minutes early is perfect. You can relax, we review the design together, and start without rushing."
+        },
+        "snacks": {
+          "title": "Bring snacks",
+          "desc": "For longer sessions, bring something to nibble and water. A bar, nuts, whatever you like."
+        },
+        "entertainment": {
+          "title": "Entertainment",
+          "desc": "Headphones, a book, your favorite show on your phone. Whatever helps you disconnect."
+        },
+        "breaks": {
+          "title": "Ask for breaks",
+          "desc": "If you need a rest, just say so. I'd rather stop for 5 minutes than tattoo someone uncomfortable."
+        },
+        "trust": {
+          "title": "Trust me",
+          "desc": "I've tattooed hundreds of pieces. I know what I'm doing. Relax and let me create something beautiful for you."
+        }
+      }
+    },
+    "after": {
+      "label": "Aftercare",
+      "title": "Make it last forever",
+      "subtitle": "The first few days are crucial. Take care of it and it'll last a lifetime.",
+      "phase1": {
+        "title": "First 48 hours",
+        "items": [
+          "Leave the bandage on for 2-4 hours (or as instructed)",
+          "Wash gently with fragrance-free soap",
+          "Pat dry with clean paper towel, don't rub",
+          "Apply a thin layer of healing ointment"
+        ]
+      },
+      "avoid": {
+        "title": "Avoid this",
+        "items": [
+          "Pools, hot tubs, and baths for 2 weeks",
+          "Direct sunlight on fresh tattoo",
+          "Scratching or picking at scabs"
+        ]
+      },
+      "timeline": {
+        "title": "Healing process",
+        "phases": {
+          "week1": {
+            "label": "Days 1-3",
+            "desc": "Redness and swelling is normal. Your skin is healing."
+          },
+          "week2": {
+            "label": "Days 4-7",
+            "desc": "It starts peeling. DON'T scratch no matter how much it itches."
+          },
+          "week3": {
+            "label": "Weeks 2-3",
+            "desc": "Outer layer heals. May look milky, that's normal."
+          },
+          "week4": {
+            "label": "Week 4+",
+            "desc": "Fully healed. Your tattoo is now settled."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to make it real?",
+      "subtitle": "You know everything you need. Now it's time to take the leap.",
+      "button": "Book session"
+    }
+  },
   "metadata": {
     "home": {
       "title": "Seaphiya | Fine Line Tattoo Artist in Miami",
@@ -61,13 +189,13 @@
     "cta": "Book a Session"
   },
   "studios": {
-    "title": "[ Studios & Guest Spots ]",
+    "title": "[ Studios & Guests ]",
     "worldwide": "Worldwide",
-    "studiosLabel": "Studios",
-    "pastGuestSpots": "Tattoo Studios & Guests",
-    "upcoming": "Upcoming Studios",
+    "studios": "Studios",
+    "pastGuests": "Past Guest Spots",
+    "upcoming": "Upcoming",
     "next": "Next",
-    "bookGuestSpot": "Book at a Studio",
+    "bookGuestSpot": "Book a guest spot",
     "current": "Current",
     "locations": {
       "miami": "Miami",
@@ -171,10 +299,10 @@
     "small": "Small",
     "medium": "Medium",
     "large": "Large",
-    "tinyDesc": "Less than 1 inch",
-    "smallDesc": "1-3 inches",
-    "mediumDesc": "3-6 inches",
-    "largeDesc": "Over 6 inches"
+    "tinyDesc": "Less than 1\" (< 2.5 cm)",
+    "smallDesc": "1-3\" (2.5-7.5 cm)",
+    "mediumDesc": "3-6\" (7.5-15 cm)",
+    "largeDesc": "Over 6\" (> 15 cm)"
   },
   "budgets": {
     "range1": "$200 - $400",
@@ -184,7 +312,15 @@
   },
   "common": {
     "email": "Email",
-    "optional": "(optional)"
+    "optional": "(optional)",
+    "selected": "Selected"
+  },
+  "notFound": {
+    "title": "Off the line",
+    "code": "404",
+    "subtitle": "Page not found",
+    "description": "This path wasn't in the design. Let's get back to creating.",
+    "backHome": "Back to Home"
   },
   "steps": {
     "step1": {
