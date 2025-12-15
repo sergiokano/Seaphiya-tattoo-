@@ -32,11 +32,11 @@ const ScrollProgress: React.FC = () => {
       transition={{ delay: 1.5, duration: 0.8 }}
     >
       {/* Track */}
-      <div className="absolute inset-0 bg-white/10 rounded-full" />
+      <div className="absolute inset-0 bg-black/10 rounded-full" />
 
       {/* Progress */}
       <motion.div
-        className="absolute top-0 left-0 right-0 bg-white/60 rounded-full origin-top"
+        className="absolute top-0 left-0 right-0 bg-black/60 rounded-full origin-top"
         style={{ scaleY, height: '100%' }}
       />
     </motion.div>
@@ -97,10 +97,10 @@ const ScrambleCoordinate: React.FC<{
   }, [finalValue, delay]);
 
   const colorClass = {
-    waiting: 'text-white/10',
-    searching: 'text-white/25',
-    highlight: 'text-white/80',
-    settled: 'text-white/50'
+    waiting: 'text-black/10',
+    searching: 'text-black/25',
+    highlight: 'text-black/80',
+    settled: 'text-black/50'
   }[phase];
 
   return (
@@ -158,10 +158,10 @@ const ScrambleCity: React.FC<{
   }, [finalValue, delay]);
 
   const colorClass = {
-    waiting: 'text-white/10',
-    searching: 'text-white/20',
-    highlight: 'text-white/70',
-    settled: 'text-white/35'
+    waiting: 'text-black/10',
+    searching: 'text-black/20',
+    highlight: 'text-black/70',
+    settled: 'text-black/35'
   }[phase];
 
   return (
@@ -208,8 +208,8 @@ const AnimatedLetter: React.FC<{
         scale: isTransitioning ? 1.08 : 1,
         y: isLoading ? [0, -8, 0] : 0,
         filter: isTransitioning ? 'blur(3px)' : 'blur(0px)',
-        color: isHero ? '#faf8f5' : 'transparent',
-        WebkitTextStroke: isHero ? '1px transparent' : '1px #faf8f5',
+        color: isHero ? '#2D2D2D' : 'transparent',
+        WebkitTextStroke: isHero ? '1px transparent' : '1px #2D2D2D',
       }}
       transition={{
         opacity: {
@@ -354,7 +354,7 @@ const Preloader: React.FC<{
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(250,248,245,0.04) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, rgba(45,45,45,0.04) 0%, transparent 60%)',
         }}
         animate={{ scale: [1, 1.3, 1], opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
@@ -365,7 +365,7 @@ const Preloader: React.FC<{
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-0.5 h-0.5 bg-white/30 rounded-full"
+            className="absolute w-0.5 h-0.5 bg-black/30 rounded-full"
             style={{
               left: `${10 + i * 12}%`,
               top: `${25 + (i % 4) * 15}%`,
@@ -395,7 +395,7 @@ const Preloader: React.FC<{
           exit={{ opacity: 0, y: -20 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <div className="font-body font-light text-white/50 lowercase flex justify-center items-center gap-x-[0.4em]">
+          <div className="font-body font-light text-black/50 lowercase flex justify-center items-center gap-x-[0.4em]">
             {['gently', 'forever'].map((word, i) => (
               <motion.span
                 key={i}
@@ -428,27 +428,27 @@ const Preloader: React.FC<{
           exit={{ opacity: 0, y: 20 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <div className="relative h-[1px] bg-white/10 overflow-hidden">
+          <div className="relative h-[1px] bg-black/10 overflow-hidden">
             <motion.div
-              className="absolute inset-y-0 left-0 bg-gradient-to-r from-white/60 via-white to-white/60"
+              className="absolute inset-y-0 left-0 bg-gradient-to-r from-black/60 via-black to-black/60"
               style={{ width: `${count}%` }}
             />
             <motion.div
-              className="absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              className="absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-black/20 to-transparent"
               animate={{ x: ['-96px', '320px'] }}
               transition={{ duration: 1.8, repeat: Infinity, ease: 'linear' }}
             />
           </div>
 
           <div className="flex justify-between items-center mt-4">
-            <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/30">
+            <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-black/30">
               {count < 100 ? 'Loading' : 'Ready'}
             </span>
             <div className="flex items-baseline gap-0.5">
-              <span className="font-mono text-xs text-white/60 tabular-nums w-6 text-right">
+              <span className="font-mono text-xs text-black/60 tabular-nums w-6 text-right">
                 {count}
               </span>
-              <span className="font-mono text-[9px] text-white/30">%</span>
+              <span className="font-mono text-[9px] text-black/30">%</span>
             </div>
           </div>
         </motion.div>
@@ -456,7 +456,7 @@ const Preloader: React.FC<{
 
       {/* Corner details */}
       <motion.span
-        className="absolute top-8 left-8 font-mono text-[9px] uppercase tracking-[0.2em] text-white/30"
+        className="absolute top-8 left-8 font-mono text-[9px] uppercase tracking-[0.2em] text-black/30"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
@@ -464,7 +464,7 @@ const Preloader: React.FC<{
         Est. 2020
       </motion.span>
       <motion.span
-        className="absolute top-8 right-8 font-mono text-[9px] uppercase tracking-[0.2em] text-white/30"
+        className="absolute top-8 right-8 font-mono text-[9px] uppercase tracking-[0.2em] text-black/30"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3 }}
@@ -472,7 +472,7 @@ const Preloader: React.FC<{
         Miami / NYC
       </motion.span>
       <motion.span
-        className="absolute bottom-8 left-8 font-mono text-[9px] uppercase tracking-[0.2em] text-white/20"
+        className="absolute bottom-8 left-8 font-mono text-[9px] uppercase tracking-[0.2em] text-black/20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
@@ -540,13 +540,13 @@ const SuggestCityForm: React.FC = () => {
           <motion.button
             key="trigger"
             onClick={() => setIsOpen(true)}
-            className="flex items-center gap-2 font-mono text-[9px] text-white/30 hover:text-coral/80 transition-colors duration-300"
+            className="flex items-center gap-2 font-mono text-[9px] text-black/30 hover:text-coral/80 transition-colors duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <span className="text-white/20">or</span>
-            <span className="underline underline-offset-2 decoration-white/10 hover:decoration-coral/40">
+            <span className="text-black/20">or</span>
+            <span className="underline underline-offset-2 decoration-black/10 hover:decoration-coral/40">
               suggest a new city
             </span>
           </motion.button>
@@ -557,18 +557,18 @@ const SuggestCityForm: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="pt-4 border-t border-white/5"
+            className="pt-4 border-t border-black/5"
           >
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full border border-dashed border-coral/30" />
-                <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40">
+                <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">
                   Suggest a city
                 </span>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-white/20 hover:text-white/50 transition-colors"
+                className="text-black/20 hover:text-black/50 transition-colors"
               >
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -578,7 +578,7 @@ const SuggestCityForm: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="block font-mono text-[8px] uppercase tracking-[0.2em] text-white/30 mb-2">
+                <label className="block font-mono text-[8px] uppercase tracking-[0.2em] text-black/30 mb-2">
                   City *
                 </label>
                 <input
@@ -586,20 +586,20 @@ const SuggestCityForm: React.FC = () => {
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   placeholder="Tokyo, London..."
-                  className="w-full bg-transparent border-b border-white/20 focus:border-coral/50 outline-none py-2 text-sm font-light text-white placeholder:text-white/20 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-black/20 focus:border-coral/50 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                   autoFocus
                 />
               </div>
               <div>
-                <label className="block font-mono text-[8px] uppercase tracking-[0.2em] text-white/20 mb-2">
-                  Email <span className="text-white/15">(optional)</span>
+                <label className="block font-mono text-[8px] uppercase tracking-[0.2em] text-black/20 mb-2">
+                  Email <span className="text-black/15">(optional)</span>
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Get notified"
-                  className="w-full bg-transparent border-b border-white/10 focus:border-coral/30 outline-none py-2 text-sm font-light text-white placeholder:text-white/15 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-black/10 focus:border-coral/30 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/15 transition-colors duration-300"
                 />
               </div>
             </div>
@@ -702,24 +702,24 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="bg-ink-black min-h-[400vh] text-pure-white selection:bg-pure-white selection:text-ink-black font-sans antialiased relative cursor-none"
+      className="bg-paper-white min-h-[400vh] text-ink-black selection:bg-paper-white selection:text-paper-white font-sans antialiased relative cursor-none"
     >
       <Navbar />
 
       {/* HERO */}
-      <section className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-ink-black">
+      <section className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-paper-white">
 
         {/* Corner Elements - Awwwards 2025 Style with Parallax */}
         {/* Top Left - Hidden on mobile, visible on md+ */}
         <motion.div className="absolute top-28 left-12 z-20 hidden md:block" style={{ y: cornerTopLeftY, opacity: elementsOpacity }} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.5, duration: 0.8 }}>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
-              <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-white/25">Location</span>
+              <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/25">Location</span>
               <ScrambleCoordinate finalValue="25.7617° N" delay={1.8} />
               <ScrambleCoordinate finalValue="80.1918° W" delay={2.0} />
             </div>
             <div className="flex flex-col gap-1">
-              <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-white/25">Next Guests</span>
+              <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/25">Next Guests</span>
               <div className="flex flex-col gap-0.5">
                 {['Zurich', 'Valencia', 'New York', 'Vienna'].map((city, i) => (
                   <ScrambleCity key={city} finalValue={city} delay={2.5 + i * 0.3} />
@@ -732,10 +732,10 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         {/* Top Right - Simplified on mobile */}
         <motion.div className="absolute top-20 right-4 md:top-28 md:right-12 z-20" style={{ y: cornerTopRightY, opacity: elementsOpacity }} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.6, duration: 0.8 }}>
           <div className="flex flex-col items-end gap-1">
-            <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.3em] text-white/25">Status</span>
+            <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.3em] text-black/25">Status</span>
             <div className="flex items-center gap-2">
               <motion.div className="w-1.5 h-1.5 rounded-full bg-sage" animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 2, repeat: Infinity }} />
-              <span className="font-mono text-[9px] md:text-[10px] text-white/50">Now booking</span>
+              <span className="font-mono text-[9px] md:text-[10px] text-black/50">Now booking</span>
             </div>
           </div>
         </motion.div>
@@ -743,27 +743,27 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         {/* Bottom Right - Adjusted for mobile */}
         <motion.div className="absolute bottom-24 right-4 md:bottom-12 md:right-12 z-20" style={{ y: cornerBottomRightY, opacity: elementsOpacity }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8, duration: 0.8 }}>
           <div className="flex flex-col items-end gap-2">
-            <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.3em] text-white/25">Follow</span>
-            <a href="https://www.instagram.com/seaphiya.tat/" target="_blank" rel="noopener noreferrer" className="font-mono text-[9px] md:text-[10px] text-white/40 hover:text-white transition-colors duration-300">Instagram</a>
+            <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.3em] text-black/25">Follow</span>
+            <a href="https://www.instagram.com/seaphiya.tat/" target="_blank" rel="noopener noreferrer" className="font-mono text-[9px] md:text-[10px] text-black/40 hover:text-ink-black transition-colors duration-300">Instagram</a>
           </div>
         </motion.div>
 
         <motion.div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 z-10 hidden md:flex flex-col items-center gap-4" style={{ y: sideLeftY, opacity: elementsOpacity }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2, duration: 0.8 }}>
-          <div className="h-16 w-[1px] bg-gradient-to-b from-transparent to-white/20" />
-          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/20 rotate-180" style={{ writingMode: 'vertical-rl' }}>Fine Line Art</span>
-          <div className="h-16 w-[1px] bg-gradient-to-t from-transparent to-white/20" />
+          <div className="h-16 w-[1px] bg-gradient-to-b from-transparent to-black/20" />
+          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/20 rotate-180" style={{ writingMode: 'vertical-rl' }}>Fine Line Art</span>
+          <div className="h-16 w-[1px] bg-gradient-to-t from-transparent to-black/20" />
         </motion.div>
 
         <motion.div className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-10 hidden md:flex flex-col items-center gap-4" style={{ y: sideRightY, opacity: elementsOpacity }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.1, duration: 0.8 }}>
-          <div className="h-16 w-[1px] bg-gradient-to-b from-transparent to-white/20" />
-          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/20" style={{ writingMode: 'vertical-rl' }}>By Appointment</span>
-          <div className="h-16 w-[1px] bg-gradient-to-t from-transparent to-white/20" />
+          <div className="h-16 w-[1px] bg-gradient-to-b from-transparent to-black/20" />
+          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/20" style={{ writingMode: 'vertical-rl' }}>By Appointment</span>
+          <div className="h-16 w-[1px] bg-gradient-to-t from-transparent to-black/20" />
         </motion.div>
 
         {/* Main Content - Positioned below the fixed title */}
         <motion.div style={{ y: heroTextY, opacity: heroOpacity }} className="absolute inset-0 z-10 flex flex-col items-center">
           {/* Top section - Est. 2020 positioned above title */}
-          <motion.div className="absolute top-[calc(50%-12vw)] md:top-[calc(50%-10vw)] w-[82vw] md:w-[75vw] lg:w-[68vw] flex justify-between text-[9px] md:text-[10px] font-mono uppercase tracking-[0.2em] opacity-40 text-white" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 0.4, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}>
+          <motion.div className="absolute top-[calc(50%-12vw)] md:top-[calc(50%-10vw)] w-[82vw] md:w-[75vw] lg:w-[68vw] flex justify-between text-[9px] md:text-[10px] font-mono uppercase tracking-[0.2em] opacity-40 text-ink-black" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 0.4, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}>
             <span>Est. 2020</span>
             <span>Miami — New York</span>
           </motion.div>
@@ -780,7 +780,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               }}
             >
               <motion.span
-                className="text-white/50"
+                className="text-black/50"
                 initial={{ opacity: 0, x: -20, filter: 'blur(10px)' }}
                 animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 1.2, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -788,7 +788,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 Gently,
               </motion.span>
               <motion.span
-                className="text-white/90"
+                className="text-black/90"
                 initial={{ opacity: 0, x: 20, filter: 'blur(10px)' }}
                 animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 1.2, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
@@ -798,9 +798,9 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
             </motion.div>
 
             <motion.div className="flex items-center justify-center gap-4 mt-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8, duration: 0.8 }}>
-              <motion.div className="w-8 md:w-12 h-[1px] bg-white/20" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 1.9, duration: 0.6 }} style={{ originX: 1 }} />
-              <span className="font-mono text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-white/30">Specializing in</span>
-              <motion.div className="w-8 md:w-12 h-[1px] bg-white/20" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 1.9, duration: 0.6 }} style={{ originX: 0 }} />
+              <motion.div className="w-8 md:w-12 h-[1px] bg-black/20" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 1.9, duration: 0.6 }} style={{ originX: 1 }} />
+              <span className="font-mono text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-black/30">Specializing in</span>
+              <motion.div className="w-8 md:w-12 h-[1px] bg-black/20" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 1.9, duration: 0.6 }} style={{ originX: 0 }} />
             </motion.div>
 
             <motion.div
@@ -813,7 +813,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               {['Fine Line', 'Micro-Realism', 'Botanical', 'Minimalist'].map((tag, i) => (
                 <motion.span
                   key={tag}
-                  className="px-3 py-1.5 border border-white/10 rounded-full font-mono text-[8px] md:text-[9px] uppercase tracking-[0.15em] text-white/40"
+                  className="px-3 py-1.5 border border-black/10 rounded-full font-mono text-[8px] md:text-[9px] uppercase tracking-[0.15em] text-black/40"
                   initial={{
                     opacity: 0,
                     scale: 0.8,
@@ -833,8 +833,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   }}
                   whileHover={{
                     scale: 1.08,
-                    borderColor: 'rgba(250,248,245,0.5)',
-                    color: 'rgba(250,248,245,0.9)',
+                    borderColor: 'rgba(45,45,45,0.5)',
+                    color: 'rgba(45,45,45,0.9)',
                     y: -2,
                     transition: { duration: 0.2 }
                   }}
@@ -849,8 +849,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
 
         {/* Scroll Indicator - Hidden on mobile to avoid clutter */}
         <motion.div style={{ y: scrollIndicatorY, opacity: scrollIndicatorOpacity }} className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2">
-          <motion.span className="font-mono text-[8px] uppercase tracking-[0.3em] text-white/25" animate={{ opacity: [0.25, 0.5, 0.25] }} transition={{ duration: 2, repeat: Infinity }}>Scroll</motion.span>
-          <motion.div className="h-10 w-[1px] bg-gradient-to-b from-white/30 to-transparent" animate={{ scaleY: [1, 0.6, 1] }} transition={{ duration: 2, repeat: Infinity }} />
+          <motion.span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/25" animate={{ opacity: [0.25, 0.5, 0.25] }} transition={{ duration: 2, repeat: Infinity }}>Scroll</motion.span>
+          <motion.div className="h-10 w-[1px] bg-gradient-to-b from-black/30 to-transparent" animate={{ scaleY: [1, 0.6, 1] }} transition={{ duration: 2, repeat: Infinity }} />
         </motion.div>
       </section>
 
@@ -858,7 +858,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
       <div className="relative z-20 w-full flex flex-col gap-0">
 
         {/* ABOUT */}
-        <section id="about" className="min-h-screen bg-ink-black py-24 md:py-0 relative">
+        <section id="about" className="min-h-screen bg-paper-white py-24 md:py-0 relative">
           <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen">
             <div className="flex items-center px-6 md:px-16 lg:px-24 py-16 md:py-0">
               <motion.div
@@ -874,11 +874,11 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-12 h-[1px] bg-white/40"></div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">The Artist</span>
+                  <div className="w-12 h-[1px] bg-black/40"></div>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/60">The Artist</span>
                 </motion.div>
 
-                <div className="text-xl md:text-2xl lg:text-3xl font-light tracking-wide text-left leading-[1.6] text-white/90">
+                <div className="text-xl md:text-2xl lg:text-3xl font-light tracking-wide text-left leading-[1.6] text-black/90">
                   <ScrollRevealText>
                     Specializing in fine line and micro-realism. Creating pieces that breathe, move, and age with grace. Every line is deliberate.
                   </ScrollRevealText>
@@ -895,15 +895,15 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   {['Fine Line', 'Micro-Realism', 'Botanical', 'Minimalist'].map((tag, i) => (
                     <motion.span
                       key={tag}
-                      className="px-3 py-1.5 border border-white/10 rounded-full font-mono text-[8px] md:text-[9px] uppercase tracking-[0.15em] text-white/40"
+                      className="px-3 py-1.5 border border-black/10 rounded-full font-mono text-[8px] md:text-[9px] uppercase tracking-[0.15em] text-black/40"
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.5 + i * 0.08, duration: 0.5 }}
                       whileHover={{
                         scale: 1.05,
-                        borderColor: 'rgba(250,248,245,0.4)',
-                        color: 'rgba(250,248,245,0.8)',
+                        borderColor: 'rgba(45,45,45,0.4)',
+                        color: 'rgba(45,45,45,0.8)',
                         y: -1,
                         transition: { duration: 0.25 }
                       }}
@@ -914,14 +914,14 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 </motion.div>
 
                 <motion.div
-                  className="mt-12 pt-8 border-t border-white/10"
+                  className="mt-12 pt-8 border-t border-black/10"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true }}
                 >
-                  <h4 className="font-editorial italic text-3xl md:text-4xl text-white">Seaphiya</h4>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] mt-3 text-white/50 leading-relaxed">
+                  <h4 className="font-editorial italic text-3xl md:text-4xl text-ink-black">Seaphiya</h4>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] mt-3 text-black/50 leading-relaxed">
                     Fine Line Artist<br/>
                     Miami, FL — Noble Art Studio
                   </p>
@@ -929,7 +929,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   {/* CTA Button */}
                   <motion.button
                     onClick={onOpenBooking}
-                    className="mt-8 group flex items-center gap-3 px-6 py-3 border border-white/20 rounded-full font-mono text-[10px] uppercase tracking-[0.2em] text-white/70 hover:bg-white hover:text-black transition-all duration-500"
+                    className="mt-8 group flex items-center gap-3 px-6 py-3 border border-black/20 rounded-full font-mono text-[10px] uppercase tracking-[0.2em] text-black/70 hover:bg-white hover:text-black transition-all duration-500"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -966,7 +966,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               >
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-sage animate-pulse" />
-                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/60">Available</span>
+                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/60">Available</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -974,18 +974,18 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         </section>
 
         {/* STUDIOS & GUEST SPOTS */}
-        <section id="studios" className="bg-ink-black border-t border-white/10 relative">
+        <section id="studios" className="bg-paper-white border-t border-black/10 relative">
           {/* Section header */}
-          <div className="relative bg-ink-black/90 border-b border-white/10 px-6 py-6 flex justify-between items-center z-20">
+          <div className="relative bg-paper-white/90 border-b border-black/10 px-6 py-6 flex justify-between items-center z-20">
             <span className="font-mono text-xs uppercase tracking-widest">[ Studios & Guests ]</span>
             <span className="font-mono text-xs uppercase tracking-widest">Worldwide</span>
           </div>
 
           {/* Three columns: Studios / Past Guests / Upcoming */}
-          <div className="grid grid-cols-1 md:grid-cols-3 border-b border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 border-b border-black/10">
 
             {/* STUDIOS - Resident */}
-            <div className="border-b md:border-b-0 md:border-r border-white/10 p-8 md:p-10">
+            <div className="border-b md:border-b-0 md:border-r border-black/10 p-8 md:p-10">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -994,7 +994,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               >
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-2 h-2 rounded-full bg-sage" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">Studios</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50">Studios</span>
                 </div>
 
                 <div className="space-y-6">
@@ -1010,15 +1010,15 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.1, duration: 0.6 }}
                     >
-                      <h4 className="font-display text-xl md:text-2xl text-white/80 group-hover:text-white transition-colors duration-300">
+                      <h4 className="font-display text-xl md:text-2xl text-black/80 group-hover:text-ink-black transition-colors duration-300">
                         {item.studio}
                       </h4>
                       <div className="flex justify-between items-center mt-2">
-                        <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/30">
+                        <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/30">
                           {item.location}
                         </p>
                         <span className={`font-mono text-[9px] uppercase tracking-[0.15em] ${
-                          item.status === 'Current' ? 'text-sage/70' : 'text-white/25'
+                          item.status === 'Current' ? 'text-sage/70' : 'text-black/25'
                         }`}>
                           {item.status}
                         </span>
@@ -1030,7 +1030,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
             </div>
 
             {/* PAST GUEST SPOTS */}
-            <div className="border-b md:border-b-0 md:border-r border-white/10 p-8 md:p-10">
+            <div className="border-b md:border-b-0 md:border-r border-black/10 p-8 md:p-10">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1038,14 +1038,14 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-2 h-2 rounded-full bg-white/30" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">Past Guest Spots</span>
+                  <div className="w-2 h-2 rounded-full bg-black/30" />
+                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50">Past Guest Spots</span>
                 </div>
 
                 <div className="relative">
                   {/* Vertical timeline line */}
                   <motion.div
-                    className="absolute left-0 top-2 bottom-2 w-[1px] bg-gradient-to-b from-white/20 via-white/10 to-transparent"
+                    className="absolute left-0 top-2 bottom-2 w-[1px] bg-gradient-to-b from-black/20 via-black/10 to-transparent"
                     initial={{ scaleY: 0 }}
                     whileInView={{ scaleY: 1 }}
                     viewport={{ once: true }}
@@ -1071,7 +1071,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                       >
                         {/* Timeline dot */}
                         <motion.div
-                          className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-white/20 group-hover:bg-white/60 transition-colors duration-300"
+                          className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-black/20 group-hover:bg-black/60 transition-colors duration-300"
                           initial={{ scale: 0 }}
                           whileInView={{ scale: 1 }}
                           viewport={{ once: true }}
@@ -1079,16 +1079,16 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         />
 
                         <div className="flex items-baseline justify-between mb-1">
-                          <h4 className="font-editorial italic text-xl md:text-2xl text-white/60 group-hover:text-white transition-colors duration-300">
+                          <h4 className="font-editorial italic text-xl md:text-2xl text-black/60 group-hover:text-ink-black transition-colors duration-300">
                             {item.city}
                           </h4>
-                          <span className="font-mono text-[9px] text-white/25 group-hover:text-white/50 transition-colors duration-300">
+                          <span className="font-mono text-[9px] text-black/25 group-hover:text-black/50 transition-colors duration-300">
                             {item.year}
                           </span>
                         </div>
                         <div className="overflow-hidden">
                           <motion.p
-                            className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25 group-hover:text-white/40 transition-colors duration-300"
+                            className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/25 group-hover:text-black/40 transition-colors duration-300"
                             initial={{ y: 0 }}
                             whileHover={{ y: -2 }}
                           >
@@ -1097,7 +1097,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         </div>
                         {/* Underline on hover */}
                         <motion.div
-                          className="absolute -bottom-1 left-0 h-[1px] bg-white/20"
+                          className="absolute -bottom-1 left-0 h-[1px] bg-black/20"
                           initial={{ width: 0 }}
                           whileHover={{ width: '100%' }}
                           transition={{ duration: 0.3 }}
@@ -1123,7 +1123,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                     animate={{ opacity: [1, 0.4, 1], scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">Upcoming</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/50">Upcoming</span>
                 </div>
 
                 <div className="relative">
@@ -1176,7 +1176,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         <div className="flex items-baseline justify-between mb-1">
                           <div className="flex items-center gap-3">
                             <h4 className={`font-editorial italic text-xl md:text-2xl transition-colors duration-300 ${
-                              item.isNext ? 'text-white' : 'text-white/70 group-hover:text-white'
+                              item.isNext ? 'text-ink-black' : 'text-black/70 group-hover:text-ink-black'
                             }`}>
                               {item.city}
                             </h4>
@@ -1199,7 +1199,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         </div>
                         <div className="overflow-hidden">
                           <motion.p
-                            className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/30 group-hover:text-white/50 transition-colors duration-300"
+                            className="font-mono text-[9px] uppercase tracking-[0.2em] text-black/30 group-hover:text-black/50 transition-colors duration-300"
                             initial={{ y: 0 }}
                             whileHover={{ y: -2 }}
                           >
@@ -1221,7 +1221,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 {/* Book CTA - Primary action */}
                 <motion.button
                   onClick={onOpenBooking}
-                  className="mt-10 group relative flex items-center gap-3 px-5 py-3 bg-white/[0.08] hover:bg-white/[0.12] border border-white/10 hover:border-white/20 rounded-full transition-all duration-300"
+                  className="mt-10 group relative flex items-center gap-3 px-5 py-3 bg-black/[0.08] hover:bg-black/[0.12] border border-black/10 hover:border-black/20 rounded-full transition-all duration-300"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -1229,8 +1229,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/80">Book a guest spot</span>
-                  <ArrowRight className="w-3 h-3 text-white/60 group-hover:translate-x-1 transition-transform" />
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-black/80">Book a guest spot</span>
+                  <ArrowRight className="w-3 h-3 text-black/60 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
 
                 {/* Suggest a City - Inline form */}
@@ -1243,8 +1243,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         <PeonyTransition />
 
         {/* GALLERY */}
-        <section id="work" className="bg-ink-black border-t border-white/10 relative z-30">
-          <div className="relative bg-ink-black/90 border-b border-white/10 px-6 py-6 flex justify-between items-center z-40">
+        <section id="work" className="bg-paper-white border-t border-black/10 relative z-30">
+          <div className="relative bg-paper-white/90 border-b border-black/10 px-6 py-6 flex justify-between items-center z-40">
             <span className="font-mono text-xs uppercase tracking-widest">[ Selected Works ]</span>
             <span className="font-mono text-xs uppercase tracking-widest">2020 — 2025</span>
           </div>
@@ -1256,7 +1256,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
               { id: '03', title: 'Botanical Flow', img: images.tattoo3 },
               { id: '04', title: 'Delicate Details', img: images.tattoo4 }
             ].map((item, idx) => (
-              <div key={idx} className="relative group border-b border-r border-white/10 h-[80vh] overflow-hidden">
+              <div key={idx} className="relative group border-b border-r border-black/10 h-[80vh] overflow-hidden">
                 <div className="absolute inset-0 bg-neutral-900">
                   <img
                     src={item.img}
@@ -1267,12 +1267,12 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
 
                 <div className="absolute inset-0 flex flex-col justify-between p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/60 to-transparent">
                   <div className="flex justify-between items-start">
-                    <span className="font-mono text-xl text-white">{item.id}</span>
-                    <ArrowRight className="-rotate-45 text-white" />
+                    <span className="font-mono text-xl text-ink-black">{item.id}</span>
+                    <ArrowRight className="-rotate-45 text-ink-black" />
                   </div>
                   <div>
-                    <h3 className="text-5xl font-black uppercase italic tracking-tighter text-white">{item.title}</h3>
-                    <p className="font-mono text-xs uppercase mt-2 tracking-widest text-white/80">View Case Study</p>
+                    <h3 className="text-5xl font-black uppercase italic tracking-tighter text-ink-black">{item.title}</h3>
+                    <p className="font-mono text-xs uppercase mt-2 tracking-widest text-black/80">View Case Study</p>
                   </div>
                 </div>
               </div>
@@ -1281,23 +1281,23 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         </section>
 
         {/* FOOTER */}
-        <footer id="contact" className="h-[70vh] bg-pure-white text-ink-black flex flex-col relative overflow-hidden">
-          <div className="flex-1 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-black/10">
+        <footer id="contact" className="h-[70vh] bg-ink-black text-paper-white flex flex-col relative overflow-hidden">
+          <div className="flex-1 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/10">
             <button onClick={onOpenBooking} className="flex-1 flex items-center justify-center group relative overflow-hidden">
-              <div className="absolute inset-0 bg-chrome scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              <div className="absolute inset-0 bg-coral scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               <div className="relative z-10 text-center">
                 <span className="block font-mono text-xs uppercase tracking-widest mb-4 opacity-50">Make it permanent</span>
                 <span className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none">Book<br/>Now</span>
               </div>
             </button>
-            <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex-1 flex items-center justify-center group relative overflow-hidden hover:bg-black hover:text-white transition-colors duration-500">
+            <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex-1 flex items-center justify-center group relative overflow-hidden hover:bg-paper-white hover:text-ink-black transition-colors duration-500">
               <div className="text-center">
                 <ArrowUp className="mx-auto w-12 h-12 mb-6 group-hover:-translate-y-4 transition-transform duration-300" />
                 <span className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none">Top</span>
               </div>
             </div>
           </div>
-          <div className="p-4 border-t border-black/10 flex justify-between items-center font-mono text-[10px] uppercase tracking-widest">
+          <div className="p-4 border-t border-white/10 flex justify-between items-center font-mono text-[10px] uppercase tracking-widest">
             <span>© Seaphiya 2025</span>
             <a href="https://www.instagram.com/seaphiya.tat/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition-opacity duration-300">Instagram</a>
           </div>

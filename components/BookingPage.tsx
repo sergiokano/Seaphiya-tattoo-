@@ -425,7 +425,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
       case 'pinterest':
         return 'from-red-500 to-red-600';
       default:
-        return 'from-white/20 to-white/10';
+        return 'from-black/20 to-black/10';
     }
   };
 
@@ -462,24 +462,24 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           >
             {/* Description */}
             <div>
-              <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-white/50 mb-2">
+              <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
                 Describe your vision *
               </label>
               <textarea
                 value={formData.description}
                 onChange={(e) => handleInputChange('description', e.target.value)}
                 placeholder="Tell me about your dream tattoo... What does it mean to you?"
-                className="w-full bg-transparent border-b border-white/20 focus:border-white/60 outline-none py-2 text-sm font-light text-white placeholder:text-white/20 resize-none transition-colors duration-300 min-h-[80px]"
+                className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 resize-none transition-colors duration-300 min-h-[80px]"
               />
             </div>
 
             {/* Reference Links - Compact */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/50">
-                  References <span className="text-white/30">(optional)</span>
+                <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/50">
+                  References <span className="text-black/30">(optional)</span>
                 </label>
-                <span className="font-mono text-[8px] text-white/30">
+                <span className="font-mono text-[8px] text-black/30">
                   {formData.referenceLinks.length}/5
                 </span>
               </div>
@@ -490,15 +490,15 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   {formData.referenceLinks.map((link) => (
                     <div
                       key={link.id}
-                      className="flex items-center gap-2 px-2 py-1 rounded-full bg-white/5 border border-white/10"
+                      className="flex items-center gap-2 px-2 py-1 rounded-full bg-black/5 border border-black/10"
                     >
                       {getPlatformIcon(link.platform)}
-                      <span className="text-[10px] text-white/60 max-w-[100px] truncate">
+                      <span className="text-[10px] text-black/60 max-w-[100px] truncate">
                         {link.url.replace(/^https?:\/\/(www\.)?/, '').slice(0, 20)}
                       </span>
                       <button
                         onClick={() => removeReferenceLink(link.id)}
-                        className="text-white/30 hover:text-white/60"
+                        className="text-black/30 hover:text-black/60"
                       >
                         <X className="w-3 h-3" />
                       </button>
@@ -517,13 +517,13 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       onChange={(e) => setNewLinkUrl(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && addReferenceLink()}
                       placeholder="Paste image URL..."
-                      className="w-full bg-white/5 border border-white/10 focus:border-white/30 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/25 outline-none transition-all"
+                      className="w-full bg-black/5 border border-black/10 focus:border-black/30 rounded-lg px-3 py-2 text-sm text-ink-black placeholder:text-black/25 outline-none transition-all"
                     />
                   </div>
                   <motion.button
                     onClick={addReferenceLink}
                     disabled={!newLinkUrl.trim()}
-                    className="px-3 bg-white/10 hover:bg-white/20 disabled:opacity-30 border border-white/10 rounded-lg text-white transition-all"
+                    className="px-3 bg-black/10 hover:bg-black/20 disabled:opacity-30 border border-black/10 rounded-lg text-ink-black transition-all"
                     whileTap={{ scale: 0.95 }}
                   >
                     <Plus className="w-4 h-4" />
@@ -545,7 +545,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             className="space-y-4"
           >
             <div>
-              <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-white/50 mb-2">
+              <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
                 Style *
               </label>
               <div className="grid grid-cols-3 md:grid-cols-6 gap-1">
@@ -555,12 +555,12 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                     onClick={() => handleInputChange('tattooStyle', style.id)}
                     className={`relative py-2 px-1 rounded-lg border text-center transition-all duration-300 ${
                       formData.tattooStyle === style.id
-                        ? 'border-white bg-white/10'
-                        : 'border-white/[0.08] hover:border-white/30'
+                        ? 'border-white bg-black/10'
+                        : 'border-black/[0.08] hover:border-black/30'
                     }`}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <span className="block text-[10px] font-medium text-white">{style.label}</span>
+                    <span className="block text-[10px] font-medium text-ink-black">{style.label}</span>
                   </motion.button>
                 ))}
               </div>
@@ -568,7 +568,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
             <div className="grid grid-cols-2 gap-6">
               <div>
-                <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-white/50 mb-2">
+                <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
                   Placement *
                 </label>
                 <input
@@ -576,12 +576,12 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   value={formData.placement}
                   onChange={(e) => handleInputChange('placement', e.target.value)}
                   placeholder="Inner forearm, behind ear..."
-                  className="w-full bg-transparent border-b border-white/20 focus:border-white/60 outline-none py-2 text-sm font-light text-white placeholder:text-white/20 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                 />
               </div>
 
               <div>
-                <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-white/50 mb-2">
+                <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
                   Size *
                 </label>
                 <div className="flex flex-wrap gap-1">
@@ -591,8 +591,8 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       onClick={() => handleInputChange('size', size.id)}
                       className={`px-2 py-1 rounded-full border transition-all duration-300 ${
                         formData.size === size.id
-                          ? 'border-white bg-white text-black'
-                          : 'border-white/10 text-white hover:border-white/30'
+                          ? 'border-white bg-ink-black text-paper-white'
+                          : 'border-black/10 text-ink-black hover:border-black/30'
                       }`}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -617,7 +617,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           >
             {/* Name */}
             <div>
-              <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-white/50 mb-2">
+              <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
                 Your Name *
               </label>
               <input
@@ -625,14 +625,14 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="Full name"
-                className="w-full bg-transparent border-b border-white/20 focus:border-white/60 outline-none py-2 text-sm font-light text-white placeholder:text-white/20 transition-colors duration-300"
+                className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
               />
             </div>
 
             {/* Email & Phone */}
             <div className="grid grid-cols-2 gap-6">
               <div>
-                <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-white/50 mb-2">
+                <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/50 mb-2">
                   Email *
                 </label>
                 <input
@@ -640,20 +640,20 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   placeholder="your@email.com"
-                  className="w-full bg-transparent border-b border-white/20 focus:border-white/60 outline-none py-2 text-sm font-light text-white placeholder:text-white/20 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                 />
               </div>
 
               <div>
-                <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-white/30 mb-2">
-                  Phone <span className="text-white/20">(optional)</span>
+                <label className="block font-mono text-[9px] uppercase tracking-[0.3em] text-black/30 mb-2">
+                  Phone <span className="text-black/20">(optional)</span>
                 </label>
                 <input
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   placeholder="+1 (555) 000-0000"
-                  className="w-full bg-transparent border-b border-white/10 focus:border-white/40 outline-none py-2 text-sm font-light text-white placeholder:text-white/15 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-black/10 focus:border-black/40 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/15 transition-colors duration-300"
                 />
               </div>
             </div>
@@ -675,8 +675,8 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               {/* Preferred Date */}
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <Calendar className="w-4 h-4 text-white/30" />
-                  <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/50">
+                  <Calendar className="w-4 h-4 text-black/30" />
+                  <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/50">
                     When?
                   </label>
                 </div>
@@ -685,15 +685,15 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   value={formData.preferredDate}
                   onChange={(e) => handleInputChange('preferredDate', e.target.value)}
                   placeholder="Jan 2025, Flexible, ASAP..."
-                  className="w-full bg-transparent border-b border-white/20 focus:border-white/60 outline-none py-2 text-sm font-light text-white placeholder:text-white/20 transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-black/20 focus:border-black/60 outline-none py-2 text-sm font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                 />
               </div>
 
               {/* Budget */}
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-white/30 text-sm">$</span>
-                  <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/50">
+                  <span className="text-black/30 text-sm">$</span>
+                  <label className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/50">
                     Budget *
                   </label>
                 </div>
@@ -704,8 +704,8 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       onClick={() => handleInputChange('budget', budget.id)}
                       className={`px-2.5 py-1 rounded-full border transition-all duration-300 ${
                         formData.budget === budget.id
-                          ? 'border-white bg-white text-black'
-                          : 'border-white/10 text-white hover:border-white/30'
+                          ? 'border-white bg-ink-black text-paper-white'
+                          : 'border-black/10 text-ink-black hover:border-black/30'
                       }`}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -717,8 +717,8 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             </div>
 
             {/* Final summary / confirmation message */}
-            <div className="pt-2 border-t border-white/[0.06]">
-              <p className="font-mono text-[9px] text-white/30 leading-relaxed">
+            <div className="pt-2 border-t border-black/[0.06]">
+              <p className="font-mono text-[9px] text-black/30 leading-relaxed">
                 Final pricing is based on design complexity and discussed during consultation.
                 A deposit is required to secure your appointment.
               </p>
@@ -733,7 +733,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
   if (isSubmitted) {
     return (
-      <div ref={containerRef} className="min-h-screen bg-ink-black text-white relative overflow-hidden cursor-none">
+      <div ref={containerRef} className="min-h-screen bg-paper-white text-ink-black relative overflow-hidden cursor-none">
         <PeonyBackground />
         <motion.div
           className="min-h-screen flex flex-col items-center justify-center px-6 relative z-10"
@@ -745,9 +745,9 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="w-20 h-20 rounded-full border border-white/30 flex items-center justify-center mb-12"
+            className="w-20 h-20 rounded-full border border-black/30 flex items-center justify-center mb-12"
           >
-            <Check className="w-8 h-8 text-white/80" />
+            <Check className="w-8 h-8 text-black/80" />
           </motion.div>
 
           <motion.div
@@ -759,7 +759,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-semibold tracking-tight mb-2">
               Request Sent
             </h1>
-            <p className="font-editorial italic text-2xl md:text-3xl text-white/50 font-light">
+            <p className="font-editorial italic text-2xl md:text-3xl text-black/50 font-light">
               Thank you
             </p>
           </motion.div>
@@ -768,7 +768,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-base md:text-lg text-white/50 text-center max-w-md mt-8 mb-12 font-light leading-relaxed"
+            className="text-base md:text-lg text-black/50 text-center max-w-md mt-8 mb-12 font-light leading-relaxed"
           >
             I'll review your request and get back to you within 24-48 hours.
           </motion.p>
@@ -778,7 +778,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="group flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 hover:bg-white hover:text-black transition-all duration-500"
+            className="group flex items-center gap-3 px-6 py-3 rounded-full border border-black/20 hover:bg-white hover:text-black transition-all duration-500"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -791,15 +791,15 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   }
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-ink-black text-white relative overflow-hidden isolate cursor-none">
+    <div ref={containerRef} className="min-h-screen bg-paper-white text-ink-black relative overflow-hidden isolate cursor-none">
       {/* Peony Background - same as PeonyTransition */}
       <PeonyBackground />
 
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full p-6 md:px-10 md:py-6 flex justify-between items-center z-50 bg-ink-black/80 backdrop-blur-xl border-b border-white/5">
+      <header className="fixed top-0 left-0 w-full p-6 md:px-10 md:py-6 flex justify-between items-center z-50 bg-paper-white/80 backdrop-blur-xl border-b border-black/5">
         <motion.button
           onClick={onBack}
-          className="flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 text-white/70 hover:text-white hover:border-white/30 transition-all duration-300 group"
+          className="flex items-center gap-3 px-4 py-2 rounded-full border border-black/10 text-black/70 hover:text-ink-black hover:border-black/30 transition-all duration-300 group"
           whileHover={{ x: -3, scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -809,7 +809,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
         <div className="flex flex-col items-center">
           <span className="font-display text-xl font-semibold tracking-tight">seaphiya</span>
-          <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-white/40">Book a Session</span>
+          <span className="font-mono text-[8px] uppercase tracking-[0.3em] text-black/40">Book a Session</span>
         </div>
 
         <div className="w-24" />
@@ -832,8 +832,8 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="flex items-center gap-4"
               >
-                <div className="w-12 h-[1px] bg-white/30"></div>
-                <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40">Begin Your Journey</span>
+                <div className="w-12 h-[1px] bg-black/30"></div>
+                <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">Begin Your Journey</span>
               </motion.div>
             </div>
 
@@ -852,7 +852,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 initial={{ y: '100%', opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[11vw] md:text-[9vw] lg:text-[7vw] font-editorial italic font-light tracking-tight leading-[0.9] text-white/50"
+                className="text-[11vw] md:text-[9vw] lg:text-[7vw] font-editorial italic font-light tracking-tight leading-[0.9] text-black/50"
               >
                 Your Session
               </motion.h1>
@@ -867,8 +867,8 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="flex items-center gap-4 mb-8">
-              <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/40">Select Location</span>
-              <div className="flex-1 h-[1px] bg-white/10" />
+              <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-black/40">Select Location</span>
+              <div className="flex-1 h-[1px] bg-black/10" />
             </div>
 
             <div className="space-y-1">
@@ -877,20 +877,20 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   key={loc.id}
                   onClick={() => handleInputChange('location', loc.id)}
                   className={`relative w-full text-left transition-all duration-300 group ${
-                    formData.location === loc.id ? 'bg-white/[0.05]' : 'hover:bg-white/[0.02]'
+                    formData.location === loc.id ? 'bg-black/[0.05]' : 'hover:bg-black/[0.02]'
                   }`}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + i * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <div className="flex items-center py-4 px-4 border-b border-white/[0.06]">
+                  <div className="flex items-center py-4 px-4 border-b border-black/[0.06]">
                     {/* Selection indicator */}
                     <div className="w-8 flex justify-center mr-4">
                       <motion.div
                         className={`w-2 h-2 rounded-full border transition-all duration-300 ${
                           formData.location === loc.id
                             ? 'bg-white border-white'
-                            : 'border-white/20 group-hover:border-white/40'
+                            : 'border-black/20 group-hover:border-black/40'
                         }`}
                         animate={{ scale: formData.location === loc.id ? 1 : 0.8 }}
                       />
@@ -898,29 +898,29 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
                     {/* City - Main */}
                     <span className={`text-xl md:text-2xl font-light tracking-tight transition-all duration-300 min-w-[120px] md:min-w-[160px] ${
-                      formData.location === loc.id ? 'text-white' : 'text-white/60 group-hover:text-white/80'
+                      formData.location === loc.id ? 'text-ink-black' : 'text-black/60 group-hover:text-black/80'
                     }`}>
                       {loc.city}
                     </span>
 
                     {/* Studio */}
-                    <span className="hidden md:block text-sm text-white/30 flex-1 px-6">
+                    <span className="hidden md:block text-sm text-black/30 flex-1 px-6">
                       {loc.studio}
                     </span>
 
                     {/* Status & Dates */}
                     <div className="flex items-center gap-4 ml-auto">
                       {loc.dates && (
-                        <span className="hidden sm:block font-mono text-[10px] text-white/40">
+                        <span className="hidden sm:block font-mono text-[10px] text-black/40">
                           {loc.dates}
                         </span>
                       )}
                       <span className={`font-mono text-[9px] uppercase tracking-wider px-2 py-1 rounded-full border transition-all duration-300 ${
                         loc.status === 'home'
-                          ? 'text-white/70 border-white/20 bg-white/[0.05]'
+                          ? 'text-black/70 border-black/20 bg-black/[0.05]'
                           : loc.status === 'confirmed'
-                            ? 'text-white/50 border-white/10'
-                            : 'text-white/30 border-white/[0.06]'
+                            ? 'text-black/50 border-black/10'
+                            : 'text-black/30 border-black/[0.06]'
                       }`}>
                         {loc.status === 'home' ? 'Home' : loc.status === 'confirmed' ? 'Guest' : 'Soon'}
                       </span>
@@ -933,29 +933,29 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               <motion.button
                 onClick={() => handleInputChange('location', 'suggest')}
                 className={`relative w-full text-left transition-all duration-300 group ${
-                  formData.location === 'suggest' ? 'bg-white/[0.05]' : 'hover:bg-white/[0.02]'
+                  formData.location === 'suggest' ? 'bg-black/[0.05]' : 'hover:bg-black/[0.02]'
                 }`}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 + locations.length * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="flex items-center py-4 px-4 border-b border-white/[0.06]">
+                <div className="flex items-center py-4 px-4 border-b border-black/[0.06]">
                   <div className="w-8 flex justify-center mr-4">
                     <motion.div
                       className={`w-2 h-2 rounded-full border transition-all duration-300 ${
                         formData.location === 'suggest'
                           ? 'bg-coral border-coral'
-                          : 'border-dashed border-white/20 group-hover:border-coral/50'
+                          : 'border-dashed border-black/20 group-hover:border-coral/50'
                       }`}
                       animate={{ scale: formData.location === 'suggest' ? 1 : 0.8 }}
                     />
                   </div>
                   <span className={`text-xl md:text-2xl font-light tracking-tight transition-all duration-300 ${
-                    formData.location === 'suggest' ? 'text-coral' : 'text-white/40 group-hover:text-coral/80'
+                    formData.location === 'suggest' ? 'text-coral' : 'text-black/40 group-hover:text-coral/80'
                   }`}>
                     Suggest a city
                   </span>
-                  <span className="hidden md:block text-sm text-white/20 flex-1 px-6 italic">
+                  <span className="hidden md:block text-sm text-black/20 flex-1 px-6 italic">
                     Join waitlist for a new city
                   </span>
                   <span className="ml-auto md:ml-0 font-mono text-[9px] uppercase tracking-wider px-2 py-1 rounded-full border border-dashed border-coral/30 text-coral/60">
@@ -984,9 +984,9 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       value={formData.suggestedCity}
                       onChange={(e) => handleInputChange('suggestedCity', e.target.value)}
                       placeholder="e.g., Tokyo, London, NYC..."
-                      className="w-full max-w-md bg-transparent border-b-2 border-coral/30 focus:border-coral/60 outline-none py-3 text-lg font-light text-white placeholder:text-white/20 transition-colors duration-300"
+                      className="w-full max-w-md bg-transparent border-b-2 border-coral/30 focus:border-coral/60 outline-none py-3 text-lg font-light text-ink-black placeholder:text-black/20 transition-colors duration-300"
                     />
-                    <p className="mt-3 font-mono text-[10px] text-white/30">
+                    <p className="mt-3 font-mono text-[10px] text-black/30">
                       You'll be added to the waitlist and notified when I plan a visit
                     </p>
                   </div>
@@ -1005,7 +1005,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="pt-4 font-mono text-[11px] text-white/40 pl-12">
+                  <p className="pt-4 font-mono text-[11px] text-black/40 pl-12">
                     {locations.find(l => l.id === formData.location)?.status === 'waitlist'
                       ? 'Dates pending — you\'ll be notified when confirmed'
                       : locations.find(l => l.id === formData.location)?.status === 'confirmed'
@@ -1028,7 +1028,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             {/* Timeline with dots and labels */}
             <div className="relative">
               {/* Background line */}
-              <div className="absolute top-[5px] left-0 right-0 h-[1px] bg-white/10" />
+              <div className="absolute top-[5px] left-0 right-0 h-[1px] bg-black/10" />
               {/* Progress line - goes exactly to current dot */}
               <motion.div
                 className="absolute top-[5px] left-0 h-[1px] bg-white"
@@ -1051,14 +1051,14 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       className={`w-[10px] h-[10px] rounded-full border transition-all duration-500 ${
                         idx <= currentStep
                           ? 'bg-white border-white'
-                          : 'bg-ink-black border-white/20'
+                          : 'bg-paper-white border-black/20'
                       }`}
                       animate={{ scale: idx === currentStep ? 1.2 : 1 }}
                       transition={{ duration: 0.3 }}
                     />
                     {idx === currentStep && (
                       <motion.div
-                        className="absolute inset-0 rounded-full border border-white/20"
+                        className="absolute inset-0 rounded-full border border-black/20"
                         initial={{ scale: 1, opacity: 0.5 }}
                         animate={{ scale: 2.5, opacity: 0 }}
                         transition={{ duration: 2.5, repeat: Infinity, ease: 'easeOut', repeatDelay: 0.3 }}
@@ -1076,7 +1076,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                     className={`text-[10px] font-medium transition-all duration-500 ${
                       idx === 0 ? 'text-left' : idx === steps.length - 1 ? 'text-right' : 'text-center'
                     } ${
-                      idx === currentStep ? 'text-white' : idx < currentStep ? 'text-white/50' : 'text-white/20'
+                      idx === currentStep ? 'text-ink-black' : idx < currentStep ? 'text-black/50' : 'text-black/20'
                     }`}
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -1098,15 +1098,15 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
           {/* Navigation */}
           <motion.div
-            className="flex justify-between items-center mt-8 pt-6 border-t border-white/10"
+            className="flex justify-between items-center mt-8 pt-6 border-t border-black/10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
             <motion.button
               onClick={prevStep}
-              className={`flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 transition-all duration-300 ${
-                currentStep === 0 ? 'opacity-30 pointer-events-none' : 'hover:bg-white/5 hover:border-white/40'
+              className={`flex items-center gap-3 px-6 py-3 rounded-full border border-black/20 transition-all duration-300 ${
+                currentStep === 0 ? 'opacity-30 pointer-events-none' : 'hover:bg-black/5 hover:border-black/40'
               }`}
               whileHover={currentStep > 0 ? { x: -3, scale: 1.02 } : {}}
               whileTap={currentStep > 0 ? { scale: 0.98 } : {}}
@@ -1118,12 +1118,12 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             {currentStep < steps.length - 1 ? (
               <motion.button
                 onClick={nextStep}
-                className="group relative flex items-center gap-3 px-8 py-3 rounded-full bg-white text-black overflow-hidden"
+                className="group relative flex items-center gap-3 px-8 py-3 rounded-full bg-ink-black text-paper-white overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-white"
+                  className="absolute inset-0 bg-gradient-to-r from-paper-white via-paper-white/80 to-paper-white"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -1135,7 +1135,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               <motion.button
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="group relative flex items-center gap-3 px-8 py-3 rounded-full bg-white text-black overflow-hidden disabled:opacity-50"
+                className="group relative flex items-center gap-3 px-8 py-3 rounded-full bg-ink-black text-paper-white overflow-hidden disabled:opacity-50"
                 whileHover={!isSubmitting ? { scale: 1.02 } : {}}
                 whileTap={!isSubmitting ? { scale: 0.98 } : {}}
               >
@@ -1175,7 +1175,7 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           href="https://www.instagram.com/seaphiya.tat/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 text-white/40 hover:text-white transition-colors group"
+          className="flex items-center gap-3 text-black/40 hover:text-ink-black transition-colors group"
         >
           <Instagram className="w-4 h-4" />
           <span className="font-mono text-[10px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
@@ -1185,10 +1185,10 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
       </aside>
 
       {/* Bottom Corner Details */}
-      <div className="fixed bottom-6 left-6 font-mono text-[9px] uppercase tracking-[0.2em] text-white/20 z-40 hidden md:block">
+      <div className="fixed bottom-6 left-6 font-mono text-[9px] uppercase tracking-[0.2em] text-black/20 z-40 hidden md:block">
         Step {currentStep + 1} of {steps.length}
       </div>
-      <div className="fixed bottom-6 right-6 font-mono text-[9px] uppercase tracking-[0.2em] text-white/20 z-40 hidden md:block">
+      <div className="fixed bottom-6 right-6 font-mono text-[9px] uppercase tracking-[0.2em] text-black/20 z-40 hidden md:block">
         Miami, FL
       </div>
     </div>

@@ -17,11 +17,11 @@ const PeonyTransition: React.FC = () => {
     const progress6 = useTransform(scrollYProgress, [0.25, 1], [0, 1]);
 
     return (
-        <section ref={containerRef} className="bg-ink-black py-48 md:py-64 flex flex-col items-center justify-center relative overflow-hidden border-t border-white/5 min-h-screen">
+        <section ref={containerRef} className="bg-paper-white py-48 md:py-64 flex flex-col items-center justify-center relative overflow-hidden border-t border-black/5 min-h-screen">
 
             {/* LEFT PEONY ARRANGEMENT - Flowing upward from bottom left */}
             <svg className="absolute -left-32 bottom-0 w-[55%] h-[85%] pointer-events-none opacity-[0.15]" viewBox="0 0 500 700" preserveAspectRatio="xMaxYMax meet" fill="none">
-                <g stroke="white" strokeLinecap="round" strokeLinejoin="round">
+                <g stroke="#2D2D2D" strokeLinecap="round" strokeLinejoin="round">
 
                     {/* Main flowing stem - curves from bottom left up */}
                     <motion.path
@@ -201,7 +201,7 @@ const PeonyTransition: React.FC = () => {
 
             {/* RIGHT PEONY ARRANGEMENT - Different composition, flowing from top right */}
             <svg className="absolute -right-16 top-0 w-[45%] h-[80%] pointer-events-none opacity-[0.15]" viewBox="0 0 400 600" preserveAspectRatio="xMinYMin meet" fill="none">
-                <g stroke="white" strokeLinecap="round" strokeLinejoin="round">
+                <g stroke="#2D2D2D" strokeLinecap="round" strokeLinejoin="round">
 
                     {/* Main stem - descending from top right */}
                     <motion.path
@@ -370,7 +370,7 @@ const PeonyTransition: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
                 >
-                    <h2 className="text-[10vw] md:text-[8vw] font-black leading-[0.85] uppercase tracking-tighter text-white">
+                    <h2 className="text-[10vw] md:text-[8vw] font-black leading-[0.85] uppercase tracking-tighter text-ink-black">
                         Where Art<br/>
                         <span className="text-transparent text-stroke tracking-normal italic font-editorial font-light">lives on skin</span>
                     </h2>
