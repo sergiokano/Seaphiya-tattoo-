@@ -540,13 +540,13 @@ const SuggestCityForm: React.FC = () => {
           <motion.button
             key="trigger"
             onClick={() => setIsOpen(true)}
-            className="flex items-center gap-2 font-mono text-[9px] text-black/50 hover:text-coral transition-colors duration-300"
+            className="group flex items-center gap-2 font-mono text-[9px] text-ink-black/60 hover:text-ink-black transition-colors duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <span className="text-black/40">or</span>
-            <span className="underline underline-offset-2 decoration-coral/40 hover:decoration-coral">
+            <span className="text-ink-black/40 group-hover:text-ink-black/60">or</span>
+            <span className="underline underline-offset-2 decoration-petal group-hover:decoration-coral group-hover:bg-petal/30 px-1 -mx-1 rounded transition-all">
               suggest a new city
             </span>
           </motion.button>
@@ -929,7 +929,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   {/* CTA Button */}
                   <motion.button
                     onClick={onOpenBooking}
-                    className="mt-8 group flex items-center gap-3 px-6 py-3 border border-ink-black/80 rounded-full font-mono text-[10px] uppercase tracking-[0.2em] bg-ink-black text-paper-white hover:bg-coral hover:border-coral transition-all duration-500"
+                    className="mt-8 group flex items-center gap-3 px-6 py-3 border border-ink-black rounded-full font-mono text-[10px] uppercase tracking-[0.2em] bg-ink-black text-paper-white hover:bg-petal hover:border-petal hover:text-ink-black transition-all duration-500"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -1069,9 +1069,9 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         transition={{ delay: 0.2 + idx * 0.12, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         whileHover={{ x: 4 }}
                       >
-                        {/* Timeline dot */}
+                        {/* Timeline dot - solid color to cover the line */}
                         <motion.div
-                          className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-black/20 group-hover:bg-black/60 transition-colors duration-300"
+                          className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-paper-white border border-chrome group-hover:bg-chrome group-hover:border-ink-black transition-colors duration-300"
                           initial={{ scale: 0 }}
                           whileInView={{ scale: 1 }}
                           viewport={{ once: true }}
@@ -1153,10 +1153,10 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         transition={{ delay: 0.3 + idx * 0.12, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         whileHover={{ x: 4 }}
                       >
-                        {/* Timeline dot - pulsing for next */}
+                        {/* Timeline dot - solid colors to cover line */}
                         <motion.div
                           className={`absolute -left-6 top-2 w-2 h-2 rounded-full transition-colors duration-300 ${
-                            item.isNext ? 'bg-coral' : 'bg-coral/30 group-hover:bg-coral/60'
+                            item.isNext ? 'bg-coral border border-coral' : 'bg-paper-white border border-coral-light group-hover:bg-coral-light'
                           }`}
                           initial={{ scale: 0 }}
                           whileInView={{ scale: 1 }}
@@ -1167,8 +1167,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                         {/* Glow ring for next */}
                         {item.isNext && (
                           <motion.div
-                            className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-coral/30"
-                            animate={{ scale: [1, 2.5, 1], opacity: [0.6, 0, 0.6] }}
+                            className="absolute -left-6 top-2 w-2 h-2 rounded-full bg-petal"
+                            animate={{ scale: [1, 2.5, 1], opacity: [0.8, 0, 0.8] }}
                             transition={{ duration: 2, repeat: Infinity }}
                           />
                         )}
@@ -1221,7 +1221,7 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                 {/* Book CTA - Secondary action (outline style) */}
                 <motion.button
                   onClick={onOpenBooking}
-                  className="mt-10 group relative flex items-center gap-3 px-5 py-3 border border-black/30 hover:border-coral hover:text-coral rounded-full transition-all duration-300"
+                  className="mt-10 group relative flex items-center gap-3 px-5 py-3 border border-ink-black/40 hover:border-petal hover:bg-petal/20 rounded-full transition-all duration-300"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -1229,8 +1229,8 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">Book a guest spot</span>
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-black/80 group-hover:text-ink-black">Book a guest spot</span>
+                  <ArrowRight className="w-3 h-3 text-ink-black/60 group-hover:text-ink-black group-hover:translate-x-1 transition-all" />
                 </motion.button>
 
                 {/* Suggest a City - Inline form */}
@@ -1265,15 +1265,15 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
                   />
                 </div>
 
-                {/* Hover overlay with mix-blend for universal readability */}
-                <div className="absolute inset-0 flex flex-col justify-between p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex justify-between items-start mix-blend-difference">
+                {/* Hover overlay with mix-blend + delayed blur animation */}
+                <div className="absolute inset-0 flex flex-col justify-between p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                  <div className="flex justify-between items-start mix-blend-difference translate-y-[-10px] blur-sm group-hover:translate-y-0 group-hover:blur-0 transition-all duration-500 delay-300">
                     <span className="font-mono text-xl text-white">{item.id}</span>
                     <ArrowRight className="-rotate-45 text-white" />
                   </div>
-                  <div className="mix-blend-difference">
+                  <div className="mix-blend-difference translate-y-[20px] blur-md group-hover:translate-y-0 group-hover:blur-0 transition-all duration-700 delay-[400ms]">
                     <h3 className="text-5xl font-black uppercase italic tracking-tighter text-white">{item.title}</h3>
-                    <p className="font-mono text-xs uppercase mt-2 tracking-widest text-white/80">View Case Study</p>
+                    <p className="font-mono text-xs uppercase mt-2 tracking-widest text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-500">View Case Study</p>
                   </div>
                 </div>
               </div>
@@ -1284,10 +1284,12 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
         {/* FOOTER */}
         <footer id="contact" className="h-[70vh] bg-ink-black text-paper-white flex flex-col relative overflow-hidden">
           <div className="flex-1 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-white/10">
-            <button onClick={onOpenBooking} className="flex-1 flex items-center justify-center group relative overflow-hidden hover:bg-off-black transition-colors duration-500">
+            <button onClick={onOpenBooking} className="flex-1 flex items-center justify-center group relative overflow-hidden">
+              {/* Animated background reveal */}
+              <div className="absolute inset-0 bg-petal scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-left" />
               <div className="relative z-10 text-center">
-                <span className="block font-mono text-xs uppercase tracking-widest mb-4 opacity-50 group-hover:opacity-70 group-hover:text-coral transition-all duration-300">Make it permanent</span>
-                <span className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none group-hover:text-paper-white transition-colors duration-300">Book<br/>Now</span>
+                <span className="block font-mono text-xs uppercase tracking-widest mb-4 opacity-50 group-hover:opacity-100 group-hover:text-ink-black transition-all duration-500 delay-100">Make it permanent</span>
+                <span className="text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none group-hover:text-ink-black transition-colors duration-500">Book<br/>Now</span>
               </div>
             </button>
             <div onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex-1 flex items-center justify-center group relative overflow-hidden hover:bg-paper-white hover:text-ink-black transition-colors duration-500">

@@ -46,14 +46,17 @@ const CustomCursor: React.FC = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-8 h-8 bg-skin rounded-full pointer-events-none z-[9999] blend-difference flex items-center justify-center mix-blend-difference"
+      className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] flex items-center justify-center border-2 border-ink-black/60"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
+        backgroundColor: 'rgba(232, 213, 196, 0.4)',
       }}
       animate={{
         scale: isHovering ? 2.5 : 1,
+        borderColor: isHovering ? 'rgba(196, 117, 110, 0.8)' : 'rgba(45, 45, 45, 0.6)',
       }}
+      transition={{ duration: 0.2 }}
     />
   );
 };
