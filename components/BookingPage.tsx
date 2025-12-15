@@ -346,26 +346,26 @@ const BookingPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   }, []);
 
   const tattooStyles = [
-    { id: 'fineline', label: 'Fine Line', desc: 'Delicate, precise linework' },
-    { id: 'microrealism', label: 'Micro Realism', desc: 'Detailed miniature portraits' },
-    { id: 'botanical', label: 'Botanical', desc: 'Floral & nature inspired' },
-    { id: 'minimalist', label: 'Minimalist', desc: 'Simple, elegant designs' },
-    { id: 'ornamental', label: 'Ornamental', desc: 'Decorative patterns' },
-    { id: 'custom', label: 'Custom Design', desc: 'Unique collaboration' }
+    { id: 'fineline', label: t('styles.fineLine'), desc: t('styles.fineLineDesc') },
+    { id: 'microrealism', label: t('styles.microRealism'), desc: t('styles.microRealismDesc') },
+    { id: 'botanical', label: t('styles.botanical'), desc: t('styles.botanicalDesc') },
+    { id: 'minimalist', label: t('styles.minimalist'), desc: t('styles.minimalistDesc') },
+    { id: 'ornamental', label: t('styles.ornamental'), desc: t('styles.ornamentalDesc') },
+    { id: 'custom', label: t('styles.customDesign'), desc: t('styles.customDesignDesc') }
   ];
 
   const sizes = [
-    { id: 'tiny', label: 'Tiny', desc: '1-2 inches' },
-    { id: 'small', label: 'Small', desc: '2-4 inches' },
-    { id: 'medium', label: 'Medium', desc: '4-6 inches' },
-    { id: 'large', label: 'Large', desc: '6+ inches' }
+    { id: 'tiny', label: t('sizes.tiny'), desc: t('sizes.tinyDesc') },
+    { id: 'small', label: t('sizes.small'), desc: t('sizes.smallDesc') },
+    { id: 'medium', label: t('sizes.medium'), desc: t('sizes.mediumDesc') },
+    { id: 'large', label: t('sizes.large'), desc: t('sizes.largeDesc') }
   ];
 
   const budgets = [
-    { id: '200-400', label: '$200 - $400' },
-    { id: '400-600', label: '$400 - $600' },
-    { id: '600-1000', label: '$600 - $1,000' },
-    { id: '1000+', label: '$1,000+' }
+    { id: '200-400', label: t('budgets.range1') },
+    { id: '400-600', label: t('budgets.range2') },
+    { id: '600-1000', label: t('budgets.range3') },
+    { id: '1000+', label: t('budgets.range4') }
   ];
 
   const steps = [

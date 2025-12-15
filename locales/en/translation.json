@@ -92,8 +92,56 @@
       "backHome": "Back to Home"
     }
   },
+  "styles": {
+    "fineLine": "Fine Line",
+    "microRealism": "Micro-Realism",
+    "botanical": "Botanical",
+    "minimalist": "Minimalist",
+    "ornamental": "Ornamental",
+    "customDesign": "Custom Design",
+    "fineLineDesc": "Clean and delicate lines",
+    "microRealismDesc": "Small realistic details",
+    "botanicalDesc": "Plants and flowers",
+    "minimalistDesc": "Simple clean shapes",
+    "ornamentalDesc": "Decorative patterns",
+    "customDesignDesc": "Something unique just for you"
+  },
+  "sizes": {
+    "tiny": "Tiny",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "tinyDesc": "Less than 1 inch",
+    "smallDesc": "1-3 inches",
+    "mediumDesc": "3-6 inches",
+    "largeDesc": "Over 6 inches"
+  },
+  "budgets": {
+    "range1": "$200 - $400",
+    "range2": "$400 - $600",
+    "range3": "$600 - $1,000",
+    "range4": "$1,000+"
+  },
   "common": {
     "email": "Email",
     "optional": "(optional)"
+  },
+  "steps": {
+    "step1": {
+      "title": "Your Vision",
+      "subtitle": "Tell me about your dream tattoo"
+    },
+    "step2": {
+      "title": "The Details",
+      "subtitle": "Size, placement & style"
+    },
+    "step3": {
+      "title": "About You",
+      "subtitle": "Let's connect"
+    },
+    "step4": {
+      "title": "Final Touch",
+      "subtitle": "Schedule & budget"
+    }
   }
 }

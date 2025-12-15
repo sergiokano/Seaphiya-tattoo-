@@ -92,8 +92,56 @@
       "backHome": "Volver al Inicio"
     }
   },
+  "styles": {
+    "fineLine": "Fine Line",
+    "microRealism": "Micro Realismo",
+    "botanical": "Botánico",
+    "minimalist": "Minimalista",
+    "ornamental": "Ornamental",
+    "customDesign": "Diseño Personalizado",
+    "fineLineDesc": "Líneas limpias y delicadas",
+    "microRealismDesc": "Pequeños detalles realistas",
+    "botanicalDesc": "Plantas y flores",
+    "minimalistDesc": "Formas simples y limpias",
+    "ornamentalDesc": "Patrones decorativos",
+    "customDesignDesc": "Algo único especialmente para ti"
+  },
+  "sizes": {
+    "tiny": "Diminuto",
+    "small": "Pequeño",
+    "medium": "Mediano",
+    "large": "Grande",
+    "tinyDesc": "Menos de 1 pulgada",
+    "smallDesc": "1-3 pulgadas",
+    "mediumDesc": "3-6 pulgadas",
+    "largeDesc": "Más de 6 pulgadas"
+  },
+  "budgets": {
+    "range1": "$200 - $400",
+    "range2": "$400 - $600",
+    "range3": "$600 - $1,000",
+    "range4": "$1,000+"
+  },
   "common": {
     "email": "Correo Electrónico",
     "optional": "(opcional)"
+  },
+  "steps": {
+    "step1": {
+      "title": "Tu Visión",
+      "subtitle": "Cuéntame sobre tu tatuaje de ensueño"
+    },
+    "step2": {
+      "title": "Los Detalles",
+      "subtitle": "Tamaño, ubicación y estilo"
+    },
+    "step3": {
+      "title": "Sobre Ti",
+      "subtitle": "Conectemos"
+    },
+    "step4": {
+      "title": "Último Toque",
+      "subtitle": "Cronograma y presupuesto"
+    }
   }
 }
