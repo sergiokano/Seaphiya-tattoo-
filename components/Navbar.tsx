@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import MagneticButton from './MagneticButton';
 import { useNavigation } from '../App';
+import { ArrowLeft } from 'lucide-react';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  showBackButton?: boolean;
+  onBack?: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ showBackButton = false, onBack }) => {
   const [time, setTime] = useState("");
-  const { openBooking } = useNavigation();
+  const { t } = useTranslation();
+  const { openBooking, openInfo } = useNavigation();
 
   useEffect(() => {
     const updateTime = () => {
@@ -53,34 +61,50 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full p-6 md:px-10 md:py-6 flex justify-between items-center z-50 text-ink-black bg-paper-white/70 backdrop-blur-xl border-b border-black/5 transition-all duration-300">
-      <div className="flex flex-col">
-         <a href="#" onClick={scrollToTop} className="text-2xl font-display font-semibold tracking-tighter leading-none hover:opacity-70 transition-opacity duration-300">
-            seaphiya
-         </a>
-         <span className="font-mono text-[10px] uppercase tracking-widest opacity-60 mt-1">Tattoo Artist</span>
+      <div className="flex items-center gap-4">
+        {showBackButton && onBack && (
+          <button
+            onClick={onBack}
+            className="group flex items-center justify-center w-10 h-10 rounded-full border border-black/20 hover:border-black/40 hover:bg-black/5 transition-all duration-300"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-300" />
+          </button>
+        )}
+        <div className="flex flex-col">
+           <a href="#" onClick={showBackButton ? onBack : scrollToTop} className="text-2xl font-display font-semibold tracking-tighter leading-none hover:opacity-70 transition-opacity duration-300">
+              {t('navbar.brand')}
+           </a>
+           <span className="font-mono text-[10px] uppercase tracking-widest opacity-60 mt-1">{t('navbar.subtitle')}</span>
+        </div>
       </div>
 
       <div className="hidden md:flex flex-col text-[10px] font-mono uppercase tracking-widest opacity-70 text-right md:text-center absolute left-1/2 -translate-x-1/2">
-        <span>Miami, FL</span>
+        <span>{t('navbar.location')}</span>
         <span>{time} EST</span>
       </div>
 
       <div className="flex gap-8 items-center">
-        <div className="hidden md:flex gap-8 text-[11px] uppercase font-bold tracking-[0.15em]">
-            <a href="#work" onClick={(e) => scrollToSection(e, 'work')} className="hover:text-coral transition-colors relative group">
-                Work
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ink-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-coral transition-colors relative group">
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ink-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
-        </div>
+        {!showBackButton && (
+          <div className="hidden md:flex gap-8 text-[11px] uppercase font-bold tracking-[0.15em]">
+              <a href="#work" onClick={(e) => scrollToSection(e, 'work')} className="hover:text-coral transition-colors relative group">
+                  {t('navbar.navigation.work')}
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ink-black transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-coral transition-colors relative group">
+                  {t('navbar.navigation.about')}
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ink-black transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <button onClick={openInfo} className="hover:text-coral transition-colors relative group">
+                  Info
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ink-black transition-all duration-300 group-hover:w-full"></span>
+              </button>
+          </div>
+        )}
         <MagneticButton
           onClick={openBooking}
           className="border border-black/20 px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-ink-black hover:text-paper-white transition-all duration-500 bg-black/5 backdrop-blur-md"
         >
-            Book Now
+            {t('navbar.navigation.bookNow')}
         </MagneticButton>
       </div>
     </nav>

@@ -1,17 +1,21 @@
 import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring, LayoutGroup } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Lenis from 'lenis';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
+import LanguageSwitcher from './components/LanguageSwitcher';
 import PeonyTransition from './components/PeonyTransition';
 import ScrollRevealText from './components/ScrollRevealText';
 import BookingPage from './components/BookingPage';
+import InfoPage from './components/InfoPage';
 import { ArrowRight, ArrowUp } from 'lucide-react';
 
 // Context for navigation
 const NavigationContext = createContext<{
   openBooking: () => void;
-}>({ openBooking: () => {} });
+  openInfo: () => void;
+}>({ openBooking: () => {}, openInfo: () => {} });
 
 export const useNavigation = () => useContext(NavigationContext);
 
@@ -1312,7 +1316,9 @@ const MainContent: React.FC<{ onOpenBooking: () => void }> = ({ onOpenBooking })
 const App: React.FC = () => {
   const [phase, setPhase] = useState<'loading' | 'transitioning' | 'ready'>('loading');
   const [showBooking, setShowBooking] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (phase === 'loading') {
@@ -1333,6 +1339,7 @@ const App: React.FC = () => {
 
   const openBooking = () => {
     setShowBooking(true);
+    setShowInfo(false);
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
@@ -1341,23 +1348,34 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
+  const openInfo = () => {
+    setShowInfo(true);
+    setShowBooking(false);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
+  const closeInfo = () => {
+    setShowInfo(false);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   const isLoading = phase === 'loading';
   const isTransitioning = phase === 'transitioning';
   const isHero = phase === 'transitioning' || phase === 'ready';
 
   return (
-    <NavigationContext.Provider value={{ openBooking }}>
+    <NavigationContext.Provider value={{ openBooking, openInfo }}>
       <CustomCursor />
 
       {/* Noise overlay */}
       <div className="fixed inset-0 z-[9999] pointer-events-none opacity-[0.07] mix-blend-overlay bg-noise bg-repeat" />
 
-      {/* Scroll Progress - show when ready */}
-      {phase === 'ready' && <ScrollProgress />}
+      {/* Scroll Progress - show when ready and not on subpages */}
+      {phase === 'ready' && !showBooking && !showInfo && <ScrollProgress />}
 
       {/* FIXED TITLE - Animated with scroll */}
-      {/* Hide when booking page is open */}
-      {!showBooking && (
+      {/* Hide when booking or info page is open */}
+      {!showBooking && !showInfo && (
         <ScrollAnimatedTitle
           isLoading={isLoading}
           isTransitioning={isTransitioning}
@@ -1384,6 +1402,16 @@ const App: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <BookingPage onBack={closeBooking} />
+          </motion.div>
+        ) : showInfo ? (
+          <motion.div
+            key="info"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <InfoPage onBack={closeInfo} />
           </motion.div>
         ) : (
           phase === 'ready' && (
